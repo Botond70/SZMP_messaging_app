@@ -11,5 +11,9 @@
 5.
 
 6. Követelménylista
+K01 Egyszerű felépítés
 
 7. Fogalomszótár
+Kliens: Felhasználó eszköze, és az ahhoz tartozó megjelenítők, kommunikátorok, adatok összessége.
+Szerver: A Kiszolgáló eszköze, és a Kliensekkel való kommunikáció, valamint a velük kapcsolatos adatokat tároló szerkezetek összessége.
+
