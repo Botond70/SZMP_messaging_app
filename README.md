@@ -1,0 +1,2 @@
+# SZMP_messaging_app
+Szoftverfejlesztés Módszertan Projekt
