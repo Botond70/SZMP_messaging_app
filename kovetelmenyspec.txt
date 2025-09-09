@@ -8,7 +8,7 @@
 
 4.
 
-5.
+5. wA rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek.
 
 6. Követelménylista
 K01 Egyszerű felépítés
