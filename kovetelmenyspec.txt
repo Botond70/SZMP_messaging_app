@@ -13,19 +13,24 @@ A projekt backendjét node.js fogja ellátni.
 Frontend fejlesztését React és Material UI komponensek használatával gyorsítjuk fel,
 mely segít a letisztult és egységes megjelenés biztosításában is.
 Felhasználók a profiljuk személyre szabására több féle lehetőséget fogunk nyujtani mint például profilképek, üzenet és háttér szín választás (előre meghatározott palettából) és becenév adás mely teljes nevük mellett zárójelben jelenik meg.
-Adatok tárolása egy Postgre adatbázisban fog történni mellyel a Node.js API fog kommunikálni, adatok tömörítve és titkosítva lesznek tárolva.
+Adatok tárolása egy Postgres adatbázisban fog történni mellyel a Node.js API fog kommunikálni, adatok tömörítve és titkosítva lesznek tárolva.
 
 3.
 
 4.
 
 5. A rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek.
-A hangfileok mp3, 
+A hangfileok mp3, Az üzenetek mérete pedig max 512 karakter, a hosszabb üzeneteket tördelve küldi el.
 
 6. Követelménylista
 K01 Egyszerű felépítés
+K02 Felhasználóbarát
+K03 Alacsony gépigény
 
 7. Fogalomszótár
 Kliens: Felhasználó eszköze, és az ahhoz tartozó megjelenítők, kommunikátorok, adatok összessége.
 Szerver: A Kiszolgáló eszköze, és a Kliensekkel való kommunikáció, valamint a velük kapcsolatos adatokat tároló szerkezetek összessége.
-
+Frontend: Minden olyan felület és kliens oldali eszköz, amivel a felhasználó találkozik, érintkezik.
+Backend: Minden olyan szerver-oldali eszköz ami a Frontend által szolgáltatott kéréseket kiszolgálja, adatait tárolja, a kért adatot visszaadja.
+Profil: Egy felhasználó leírása, Névvel, eléréssel, profilképpel ellátva.
+API: (Application Programming Interface) A Frontend és a Backend közti kommunikációt biztosítja. Ezen keresztül folynak a Backend hívásai.
