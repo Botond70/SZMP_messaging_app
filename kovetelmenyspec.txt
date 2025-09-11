@@ -1,11 +1,6 @@
 Üzenetküldő applikáció követelményspecifikáció
 
 1. 
-Gergő:
-
-Márk:
-
-Martinez: 
 A projektünk lényege egy üzenet küldő web applikáció, mely gyors és hatékony üzenet és kép küldést biztosít felhasználóink számára.
 Felhasználók saját igényre szabható fiókkal rendelkeznek ami lehetővéteszi személyiségüket átadhatják a világ felé.
 Profilok keresésével barátaink és ismerőseinket megtalálhatjuk profil nevükkel és őket barátnak is jelölhetünk mellyel lehetőségünk nyílik a könnyű kapcsolattartásra.
@@ -13,28 +8,19 @@ A kliensek számára egy letisztult és egyszerű felhasználói felületet bizt
 Magán szemnek szánt üzeneteket/képeket titkosítás révén biztonságban tudhatják.
 Az applikáció legfontosabb szempontja az egyszerű, gyors és gördülékeny használat köré épül.
 
-Botond: 
-
 2.
-Gergő:
-
-Márk:
-
-Martinez: 
 A projekt backendjét node.js fogja ellátni.
 Frontend fejlesztését React és Material UI komponensek használatával gyorsítjuk fel,
 mely segít a letisztult és egységes megjelenés biztosításában is.
-Felhasználók regisztráláskor megadott email címükre üzenetet küldünk az email cím igazolása érdekében és hogy tényleges tulajdonos-e a személy.
 Felhasználók a profiljuk személyre szabására több féle lehetőséget fogunk nyujtani mint például profilképek, üzenet és háttér szín választás (előre meghatározott palettából) és becenév adás mely teljes nevük mellett zárójelben jelenik meg.
 Adatok tárolása egy Postgre adatbázisban fog történni mellyel a Node.js API fog kommunikálni, adatok tömörítve és titkosítva lesznek tárolva.
-
-Botond: 
 
 3.
 
 4.
 
-5. wA rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek.
+5. A rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek.
+A hangfileok mp3, 
 
 6. Követelménylista
 K01 Egyszerű felépítés
