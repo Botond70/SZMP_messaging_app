@@ -1,0 +1,27 @@
+Funkció specifikáció
+
+1.1 Online felület
+1.1.1 Ez lesz az a felület, amit a felhasználok fognak használni a regisztrációra,
+bejelentkezésre, profil testreszabásra, más személy keresésére és annak bejelölésére, csevegésre és fájlok küldésére.
+1.2 Regisztráció
+1.2.1 A felhasználok tudnak regisztrálni fiókokat egy felhasználónév és jelszó használatával a rendszerbe.
+1.3 Bejelentkezés
+1.3.1 A felhasználok a regisztráció során megadott adataikkal  tudnak majd belépni a fiókjukba.
+2.1 Felhasználói testreszabás
+2.1.1 A felhasználók képesek lesznek majd profilképet beállitani és esetlegesen nevet változtatni.
+3.1 Felhasználók közötti kapcsolat
+3.1.1 A felhasználók képesek lesznek egymást megkeresni, letiltani és barátnak jelölni.
+3.2 Név alapján való keresés
+3.2.1 A felhasználók megkereshetik egymást név alapján úgy hogy a keresőbe beirják a másik fél nevét.
+3.3 Letiltás
+3.3.1 A felhasználó letud tiltani nem kivánatos felhasználót, ilyenkor a csevegés az illetővel megszűnik ha volt és kitörli a barátlistáról.
+3.4 Barát hozzáadás
+3.4.1 A felhasználók betudnak jelölni másik felhasználót barátnak, és csak ezután tudnak csevegni egymással.
+4.1 Felhasználók közötti kommunikáció
+4.1.1 A felhasználók a csevegő ablakban tudnak egymással beszélni szöveg alapján, ezen felül tudnak fájlokat és  hangulatjeleket küldeni.
+4.2 Képek küldése
+4.2.1 A csevegőablakban elküldött képek megnyitva jelennek meg a felhasználók számára.
+4.3 Fájlok küldése
+4.3.1 A csevegőablakban van lehetőség fájlok küldésére, de csak a fájl neve jelenik meg a tartalma nem.
+4.4 Hangulatjelek küldése
+4.4.1 A csevegőablakban a felhasználók képesek a szövegükhöz hangulatjeleket tenni vagy simán küldeni egymásnak.
