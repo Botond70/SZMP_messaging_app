@@ -15,7 +15,12 @@ mely segít a letisztult és egységes megjelenés biztosításában is.
 Felhasználók a profiljuk személyre szabására több féle lehetőséget fogunk nyujtani mint például profilképek, üzenet és háttér szín választás (előre meghatározott palettából) és becenév adás mely teljes nevük mellett zárójelben jelenik meg.
 Adatok tárolása egy Postgres adatbázisban fog történni mellyel a Node.js API fog kommunikálni, adatok tömörítve és titkosítva lesznek tárolva.
 
-3.
+3. Jelenlegi üzleti folyamatok
+3.1. A fizikális kommunikáció
+3.1.1. Amikor beszélünk valakivel, akkor helyben, időben ott kell lennünk vele személyesen és választ egyből kaphatunk.
+3.2. A táv kommunikáció
+3.2.1. Levelezésnél, nem kell egy adott térben, időben jelen lenni akivel akarunk kommunikálni, viszont kell egy idő míg a levél megérkezik az illetőhöz.
+3.2.2. Válasznál, ugyan ezek a szempontok érvényesek.
 
 4.
 
