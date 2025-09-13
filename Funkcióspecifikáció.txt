@@ -25,3 +25,11 @@ bejelentkezésre, profil testreszabásra, más személy keresésére és annak b
 4.3.1 A csevegőablakban van lehetőség fájlok küldésére, de csak a fájl neve jelenik meg a tartalma nem.
 4.4 Hangulatjelek küldése
 4.4.1 A csevegőablakban a felhasználók képesek a szövegükhöz hangulatjeleket tenni vagy simán küldeni egymásnak.
+5.1 Beállítások
+5.1.1 A felhasználók megváltozhatják a felület sémáját, a szövegek betűméretét és nyelvet is válaszhatnak.
+5.2 Felületi téma
+5.2.1 A felhasználó megváltozhatja az alkalmazás felületének szinét, az előre megadottakból vagy egyedi szinekből.
+5.3 betűméret
+5.3.1 A felhasználó be tudja állitani a szöveg betűinek méretét.
+5.4 Nyelv választás
+5.4.1 A felhasználó tud majd az előre definiált nyelvekből választani.
