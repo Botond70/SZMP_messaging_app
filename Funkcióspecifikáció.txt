@@ -1,5 +1,16 @@
 Funkció specifikáció
 
+Technológiai architektúra
+1 Frontend
+1.1 Keretrendszer: React.js
+1.2 Komponenskönyvtár: Material UI
+1.3 Fejlesztési nyelvek: HTML, CSS, JavaScript.
+
+2 Backend
+2.1 Keretrendszer: Node.js, szerveroldali logika.
+2.2 Adatbázis: PostgreSQL a felhasználói és üzenetadatok tárolására.
+2.3 Adatbiztonság: Az adatbázisban tárolt információk tömörítve és titkosítva lesznek.
+
 1.1 Online felület
 1.1.1 Ez lesz az a felület, amit a felhasználok fognak használni a regisztrációra,
 bejelentkezésre, profil testreszabásra, más személy keresésére és annak bejelölésére, csevegésre és fájlok küldésére.
