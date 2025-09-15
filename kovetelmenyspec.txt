@@ -32,12 +32,12 @@ Adatok tárolása egy Postgres adatbázisban fog történni mellyel a Node.js AP
 4.2.4 név változtatás
 4.3 Felhasznáók közötti kapcsolat
 4.3.1 Két felhasználó megkeresheti egymást név alapján => barátnak jelölhet => barát elfogadás után kommunikációs csatorna létrehozása
-4.3.2 Opció egy nemívánatos felhasználó letiltására
+4.3.2 Opció egy nem kívánatos felhasználó letiltására
 4.3.3 Két felhasználó közös barátainak listázása
 4.4 Felhasználók közötti kommunikáció
 4.4.1 szöveg alapján
 4.4.2 képek küldése és megjelnítése
-4.4.3 fileok megosztása
+4.4.3 file-ok megosztása
 4.4.4 hangulatjelek küldése
 4.5 Beállítások
 4.5.1 a felületi téma módosítása
@@ -45,12 +45,12 @@ Adatok tárolása egy Postgres adatbázisban fog történni mellyel a Node.js AP
 4.5.3 nyelv kiválasztása
 
 
-5. A rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek.
+5. A rendszerre vonatkozó szabályok: A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek.
 A hangfileok mp3, Az üzenetek mérete pedig max 512 karakter, a hosszabb üzeneteket tördelve küldi el.
 
 6. Követelménylista
 K01 Egyszerű felépítés
-K02 Felhasználóbarát
+K02 Felhasználóbarát megjelenés és használat
 K03 Alacsony gépigény
 
 7. Fogalomszótár
