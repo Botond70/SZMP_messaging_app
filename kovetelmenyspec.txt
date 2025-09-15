@@ -2,8 +2,9 @@
 
 1. 
 A projektünk lényege egy üzenet küldő web applikáció, mely gyors és hatékony üzenet és kép küldést biztosít felhasználóink számára.
-Felhasználók saját igényre szabható fiókkal rendelkeznek ami lehetővéteszi személyiségüket átadhatják a világ felé.
+Felhasználók saját igényre szabható fiókkal rendelkeznek ami lehetővéteszi személyiségüket bemutatását és személyes igények kielégítést.
 Profilok keresésével barátaink és ismerőseinket megtalálhatjuk profil nevükkel és őket barátnak is jelölhetünk mellyel lehetőségünk nyílik a könnyű kapcsolattartásra.
+A felhasználói kényelem érdekében betűméret állítható rossz látási viszonyok / látásizavarok okozta nehézségek esetén.
 A kliensek számára egy letisztult és egyszerű felhasználói felületet biztosít és ezt saját kedvenc színeikkel fel is ruházhatják.
 Magán szemnek szánt üzeneteket/képeket titkosítás révén biztonságban tudhatják.
 Az applikáció legfontosabb szempontja az egyszerű, gyors és gördülékeny használat köré épül.
