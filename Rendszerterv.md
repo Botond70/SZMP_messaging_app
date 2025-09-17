@@ -56,4 +56,21 @@
 
 
 ## Adatbázis terv
-
+### Users table:
+    - ID
+    - name
+    - email
+    - birthday
+    - pwd
+### Message table:
+    - ID 
+    - senderID
+    - recipientID
+    - content
+    - sentTime
+### Friend table:
+    - ID
+    - sender
+    - recipient
+    - status
+    - requested time 
