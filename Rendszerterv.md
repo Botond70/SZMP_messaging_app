@@ -53,7 +53,30 @@
 
 
 ## Felülettel szemben támasztott követelmények
+### Log in:
 
+- Sign up button
+- username or email
+- password
+- Login button
+
+### Sign up:
+- name
+- email
+- birthday
+- password + confirm 
+
+### Main page:
+- Top:
+    - App name (left) + user picture (right)
+- Left:
+    - User profile
+    - Friends
+    - Notifications
+    - Settings
+    - Sign out
+- Right + Middle:
+    - Current chats
 
 ## Adatbázis terv
 ### Users table:
