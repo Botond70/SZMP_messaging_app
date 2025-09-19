@@ -53,45 +53,45 @@
 
 
 ## Felülettel szemben támasztott követelmények
-### Log in:
+### Bejelentkezés:
 
-- Sign up button
-- username or email
-- password
-- Login button
+- Regisztráció gomb
+- Felhasználónév vagy jelszó
+- Jelszó
+- Bejelentkezés gomb
 
-### Sign up:
-- name
-- email
-- birthday
-- password + confirm 
+### Regisztráció:
+- Név
+- Email
+- Születésnap
+- Jelszó + jelszó megerősitése
 
-### Main page:
-- Top:
-    - App name (left) + user picture (right)
-- Left:
-    - User profile
-    - Friends
-    - Notifications
-    - Settings
-    - Sign out
-- Right + Middle:
-    - Current chats
+### Fő oldal:
+- Fenti rész:
+    - Applikáció neve (bal oldalt) + felhasználó profilképe (jobb oldalt)
+- Bal oldali rész:
+    - Felhasználó profilja
+    - Barátok
+    - Értesitések
+    - Beállitások
+    - Kijelentkezés
+- Jobb oldali és középső rész:
+    - Jelenlegi csevegések
 
 ## Adatbázis terv
-### Users table:
+### Felhasználók tábla:
     - ID
     - name
     - email
     - birthday
     - pwd
-### Message table:
+### Üzenet tábla:
     - ID 
     - senderID
     - recipientID
     - content
     - sentTime
-### Friend table:
+### Barát tábla:
     - ID
     - sender
     - recipient
