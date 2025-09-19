@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="676pt" height="881pt" viewBox="0.00 0.00 676.00 881.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 877.2)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-877.2 672.25,-877.2 672.25,4 -4,4"/>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<polygon fill="lightgreen" stroke="black" points="445.83,-873.2 223.4,-831.6 445.83,-790 668.25,-831.6 445.83,-873.2"/>
+<polyline fill="none" stroke="black" points="235.2,-833.81 235.2,-829.39"/>
+<polyline fill="none" stroke="black" points="434.03,-792.21 457.62,-792.21"/>
+<polyline fill="none" stroke="black" points="656.46,-829.39 656.46,-833.81"/>
+<polyline fill="none" stroke="black" points="457.62,-870.99 434.03,-870.99"/>
+<text xml:space="preserve" text-anchor="middle" x="445.83" y="-835.8" font-family="Times,serif" font-size="14.00">Indulás</text>
+<text xml:space="preserve" text-anchor="middle" x="445.83" y="-819" font-family="Times,serif" font-size="14.00">(Felhasználó a regisztrációra kattint)</text>
+</g>
+<!-- register_page -->
+<g id="node2" class="node">
+<title>register_page</title>
+<polygon fill="lightblue" stroke="black" points="549.86,-753 341.8,-753 341.8,-717 549.86,-717 549.86,-753"/>
+<text xml:space="preserve" text-anchor="middle" x="445.83" y="-730.8" font-family="Times,serif" font-size="14.00">Regisztrációs oldal megjelenítése</text>
+</g>
+<!-- start&#45;&gt;register_page -->
+<g id="edge1" class="edge">
+<title>start-&gt;register_page</title>
+<path fill="none" stroke="gray" d="M445.83,-789.66C445.83,-781.17 445.83,-772.4 445.83,-764.48"/>
+<polygon fill="gray" stroke="gray" points="449.33,-764.75 445.83,-754.75 442.33,-764.75 449.33,-764.75"/>
+</g>
+<!-- input_data -->
+<g id="node3" class="node">
+<title>input_data</title>
+<polygon fill="lightblue" stroke="black" points="417.66,-680 85.46,-680 0,-596.8 332.2,-596.8 417.66,-680"/>
+<text xml:space="preserve" text-anchor="middle" x="208.83" y="-642.6" font-family="Times,serif" font-size="14.00">Felhasználó megadja az adatokat</text>
+<text xml:space="preserve" text-anchor="middle" x="208.83" y="-625.8" font-family="Times,serif" font-size="14.00">(Felhasználónév &amp; Jelszó)</text>
+</g>
+<!-- register_page&#45;&gt;input_data -->
+<g id="edge2" class="edge">
+<title>register_page-&gt;input_data</title>
+<path fill="none" stroke="gray" d="M402.08,-716.54C379.33,-707.46 350.36,-695.89 321.82,-684.5"/>
+<polygon fill="gray" stroke="gray" points="323.33,-681.34 312.75,-680.88 320.74,-687.84 323.33,-681.34"/>
+</g>
+<!-- submit_button -->
+<g id="node4" class="node">
+<title>submit_button</title>
+<polygon fill="lightblue" stroke="black" points="308.98,-559.8 108.68,-559.8 108.68,-523.8 308.98,-523.8 308.98,-559.8"/>
+<text xml:space="preserve" text-anchor="middle" x="208.83" y="-537.6" font-family="Times,serif" font-size="14.00">Regisztráció gomb megnyomása</text>
+</g>
+<!-- input_data&#45;&gt;submit_button -->
+<g id="edge3" class="edge">
+<title>input_data-&gt;submit_button</title>
+<path fill="none" stroke="gray" d="M208.83,-596.46C208.83,-587.97 208.83,-579.2 208.83,-571.28"/>
+<polygon fill="gray" stroke="gray" points="212.33,-571.55 208.83,-561.55 205.33,-571.55 212.33,-571.55"/>
+</g>
+<!-- server_validation -->
+<g id="node5" class="node">
+<title>server_validation</title>
+<path fill="lightblue" stroke="black" d="M286.41,-472.53C286.41,-474.33 251.64,-475.8 208.83,-475.8 166.02,-475.8 131.24,-474.33 131.24,-472.53 131.24,-472.53 131.24,-443.07 131.24,-443.07 131.24,-441.27 166.02,-439.8 208.83,-439.8 251.64,-439.8 286.41,-441.27 286.41,-443.07 286.41,-443.07 286.41,-472.53 286.41,-472.53"/>
+<path fill="none" stroke="black" d="M286.41,-472.53C286.41,-470.72 251.64,-469.25 208.83,-469.25 166.02,-469.25 131.24,-470.72 131.24,-472.53"/>
+<text xml:space="preserve" text-anchor="middle" x="208.83" y="-453.6" font-family="Times,serif" font-size="14.00">Szerver oldali ellenőrzés</text>
+</g>
+<!-- submit_button&#45;&gt;server_validation -->
+<g id="edge4" class="edge">
+<title>submit_button-&gt;server_validation</title>
+<path fill="none" stroke="gray" d="M208.83,-523.41C208.83,-512.97 208.83,-499.44 208.83,-487.46"/>
+<polygon fill="gray" stroke="gray" points="212.33,-487.68 208.83,-477.68 205.33,-487.68 212.33,-487.68"/>
+<text xml:space="preserve" text-anchor="middle" x="237.85" y="-496.8" font-family="Times,serif" font-size="10.00">Kérés küldése</text>
+</g>
+<!-- username_exists -->
+<g id="node6" class="node">
+<title>username_exists</title>
+<polygon fill="yellow" stroke="black" points="208.83,-402.8 61.61,-384.8 208.83,-366.8 356.04,-384.8 208.83,-402.8"/>
+<text xml:space="preserve" text-anchor="middle" x="208.83" y="-380.6" font-family="Times,serif" font-size="14.00">Felhasználónév foglalt?</text>
+</g>
+<!-- server_validation&#45;&gt;username_exists -->
+<g id="edge5" class="edge">
+<title>server_validation-&gt;username_exists</title>
+<path fill="none" stroke="gray" d="M208.83,-439.61C208.83,-432.03 208.83,-422.9 208.83,-414.34"/>
+<polygon fill="gray" stroke="gray" points="212.33,-414.34 208.83,-404.34 205.33,-414.34 212.33,-414.34"/>
+</g>
+<!-- password_strong -->
+<g id="node7" class="node">
+<title>password_strong</title>
+<polygon fill="yellow" stroke="black" points="171.83,-318.8 63.69,-300.8 171.83,-282.8 279.97,-300.8 171.83,-318.8"/>
+<text xml:space="preserve" text-anchor="middle" x="171.83" y="-296.6" font-family="Times,serif" font-size="14.00">Jelszó elég erős?</text>
+</g>
+<!-- username_exists&#45;&gt;password_strong -->
+<g id="edge7" class="edge">
+<title>username_exists-&gt;password_strong</title>
+<path fill="none" stroke="gray" d="M201.52,-367.6C196.45,-356.37 189.59,-341.16 183.74,-328.19"/>
+<polygon fill="gray" stroke="gray" points="187.05,-327.02 179.75,-319.35 180.67,-329.9 187.05,-327.02"/>
+<text xml:space="preserve" text-anchor="middle" x="202.26" y="-339.8" font-family="Times,serif" font-size="10.00">Nem</text>
+</g>
+<!-- error_username -->
+<g id="node10" class="node">
+<title>error_username</title>
+<polygon fill="salmon" stroke="black" points="529.51,-318.8 298.14,-318.8 298.14,-282.8 529.51,-282.8 529.51,-318.8"/>
+<text xml:space="preserve" text-anchor="middle" x="413.83" y="-296.6" font-family="Times,serif" font-size="14.00">Hibaüzenet: 'A felhasználónév foglalt'</text>
+</g>
+<!-- username_exists&#45;&gt;error_username -->
+<g id="edge6" class="edge">
+<title>username_exists-&gt;error_username</title>
+<path fill="none" stroke="gray" d="M242.22,-370.44C274.16,-357.67 322.86,-338.19 360.23,-323.24"/>
+<polygon fill="gray" stroke="gray" points="361.06,-326.68 369.05,-319.71 358.46,-320.18 361.06,-326.68"/>
+<text xml:space="preserve" text-anchor="middle" x="332.49" y="-339.8" font-family="Times,serif" font-size="10.00">Igen</text>
+</g>
+<!-- db_save -->
+<g id="node8" class="node">
+<title>db_save</title>
+<polygon fill="lightgreen" stroke="black" points="268.27,-234.8 75.39,-234.8 75.39,-198.8 268.27,-198.8 268.27,-234.8"/>
+<text xml:space="preserve" text-anchor="middle" x="171.83" y="-212.6" font-family="Times,serif" font-size="14.00">Adatok mentése az adatbázisba</text>
+</g>
+<!-- password_strong&#45;&gt;db_save -->
+<g id="edge8" class="edge">
+<title>password_strong-&gt;db_save</title>
+<path fill="none" stroke="gray" d="M171.83,-282.41C171.83,-271.97 171.83,-258.44 171.83,-246.46"/>
+<polygon fill="gray" stroke="gray" points="175.33,-246.68 171.83,-236.68 168.33,-246.68 175.33,-246.68"/>
+<text xml:space="preserve" text-anchor="middle" x="180.71" y="-255.8" font-family="Times,serif" font-size="10.00">Igen</text>
+</g>
+<!-- error_password -->
+<g id="node11" class="node">
+<title>error_password</title>
+<polygon fill="salmon" stroke="black" points="573.15,-234.8 372.5,-234.8 372.5,-198.8 573.15,-198.8 573.15,-234.8"/>
+<text xml:space="preserve" text-anchor="middle" x="472.83" y="-212.6" font-family="Times,serif" font-size="14.00">Hibaüzenet: 'A jelszó túl gyenge'</text>
+</g>
+<!-- password_strong&#45;&gt;error_password -->
+<g id="edge9" class="edge">
+<title>password_strong-&gt;error_password</title>
+<path fill="none" stroke="gray" d="M211.49,-289C258.83,-276.1 339,-254.26 398.09,-238.16"/>
+<polygon fill="gray" stroke="gray" points="398.68,-241.63 407.4,-235.62 396.84,-234.87 398.68,-241.63"/>
+<text xml:space="preserve" text-anchor="middle" x="350.07" y="-255.8" font-family="Times,serif" font-size="10.00">Nem</text>
+</g>
+<!-- chat_page -->
+<g id="node9" class="node">
+<title>chat_page</title>
+<polygon fill="lightgreen" stroke="black" points="250.77,-161.8 92.89,-161.8 92.89,-120.2 250.77,-120.2 250.77,-161.8"/>
+<text xml:space="preserve" text-anchor="middle" x="171.83" y="-145.2" font-family="Times,serif" font-size="14.00">Sikeres regisztráció</text>
+<text xml:space="preserve" text-anchor="middle" x="171.83" y="-128.4" font-family="Times,serif" font-size="14.00">(Belépés a chat felületre)</text>
+</g>
+<!-- db_save&#45;&gt;chat_page -->
+<g id="edge10" class="edge">
+<title>db_save-&gt;chat_page</title>
+<path fill="none" stroke="gray" d="M171.83,-198.31C171.83,-190.95 171.83,-182.15 171.83,-173.72"/>
+<polygon fill="gray" stroke="gray" points="175.33,-173.75 171.83,-163.75 168.33,-173.75 175.33,-173.75"/>
+</g>
+<!-- end_success -->
+<g id="node12" class="node">
+<title>end_success</title>
+<polygon fill="lightgreen" stroke="black" points="171.83,-83.2 45.03,-41.6 171.83,0 298.62,-41.6 171.83,-83.2"/>
+<polyline fill="none" stroke="black" points="56.43,-45.34 56.43,-37.86"/>
+<polyline fill="none" stroke="black" points="160.43,-3.74 183.23,-3.74"/>
+<polyline fill="none" stroke="black" points="287.22,-37.86 287.22,-45.34"/>
+<polyline fill="none" stroke="black" points="183.23,-79.46 160.43,-79.46"/>
+<text xml:space="preserve" text-anchor="middle" x="171.83" y="-45.8" font-family="Times,serif" font-size="14.00">Sikeres regisztráció</text>
+<text xml:space="preserve" text-anchor="middle" x="171.83" y="-29" font-family="Times,serif" font-size="14.00">(Folyamat vége)</text>
+</g>
+<!-- chat_page&#45;&gt;end_success -->
+<g id="edge13" class="edge">
+<title>chat_page-&gt;end_success</title>
+<path fill="none" stroke="gray" d="M171.83,-119.82C171.83,-112.45 171.83,-103.74 171.83,-94.88"/>
+<polygon fill="gray" stroke="gray" points="175.33,-95.16 171.83,-85.16 168.33,-95.16 175.33,-95.16"/>
+</g>
+<!-- error_username&#45;&gt;register_page -->
+<g id="edge11" class="edge">
+<title>error_username-&gt;register_page</title>
+<path fill="none" stroke="gray" d="M425.02,-319.27C434.25,-335.37 445.83,-360.27 445.83,-383.8 445.83,-639.4 445.83,-639.4 445.83,-639.4 445.83,-661.49 445.83,-686.49 445.83,-705.24"/>
+<polygon fill="gray" stroke="gray" points="442.33,-705.05 445.83,-715.05 449.33,-705.05 442.33,-705.05"/>
+<text xml:space="preserve" text-anchor="middle" x="478.32" y="-496.8" font-family="Times,serif" font-size="10.00">Újrapróbálkozás</text>
+</g>
+<!-- error_password&#45;&gt;register_page -->
+<g id="edge12" class="edge">
+<title>error_password-&gt;register_page</title>
+<path fill="none" stroke="gray" d="M508.88,-235.07C532.04,-248.95 557.83,-270.89 557.83,-299.8 557.83,-639.4 557.83,-639.4 557.83,-639.4 557.83,-672.19 529.47,-695.93 501.29,-711.43"/>
+<polygon fill="gray" stroke="gray" points="499.99,-708.16 492.73,-715.87 503.21,-714.38 499.99,-708.16"/>
+<text xml:space="preserve" text-anchor="middle" x="590.32" y="-454.8" font-family="Times,serif" font-size="10.00">Újrapróbálkozás</text>
+</g>
+</g>
+</svg>
