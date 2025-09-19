@@ -1,0 +1,32 @@
+digraph G {
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=gray, fontsize=10];
+
+    // Csomópontok definiálása
+    start [label="Indulás\n(Felhasználó megnyitja az oldalt)", shape=Mdiamond, fillcolor=lightgreen];
+    login_page [label="Bejelentkezési oldal megjelenítése", shape=box];
+    input_data [label="Felhasználó megadja az adatokat\n(Felhasználónév & Jelszó)", shape=parallelogram];
+    submit_button [label="Bejelentkezés gomb megnyomása", shape=box];
+    server_auth [label="Szerver oldali azonosítás\n(Adatbázis ellenőrzése)", shape=cylinder];
+    password_ok [label="Jelszó helyes?", shape=diamond, fillcolor=yellow];
+    email_ok [label="Felhasználónév létezik?", shape=diamond, fillcolor=yellow];
+    chat_page [label="Belépés a chat felületre", shape=box, fillcolor=lightgreen];
+    error_message [label="Hibaüzenet megjelenítése\n(pl. 'Hibás jelszó' vagy 'A fiók nem létezik')", shape=box, fillcolor=salmon];
+    end_success [label="Sikeres bejelentkezés\n(Folyamat vége)", shape=Mdiamond, fillcolor=lightgreen];
+    
+    // Élek (folyamat) definiálása
+    start -> login_page [label=""];
+    login_page -> input_data [label=""];
+    input_data -> submit_button [label=""];
+    submit_button -> server_auth [label="Kérés küldése"];
+    server_auth -> email_ok [label=""];
+    
+    email_ok -> password_ok [label="Igen"];
+    email_ok -> error_message [label="Nem"];
+    
+    password_ok -> chat_page [label="Igen"];
+    password_ok -> error_message [label="Nem"];
+    
+    error_message -> login_page [label="Vissza a bejelentkezéshez\nvagy újrapróbálkozás"];
+    chat_page -> end_success [label=""];
+}
