@@ -26,7 +26,7 @@
     - Belépés a fiókba felhasználó név és jelszó segitségével
 
 - Felhasználói testreszabás
-    - Profilkép beállitás, mmaximum 512x512 felbontású, jpg formátumú képet lehet megadni
+    - Profilkép beállitás, maximum 512x512 felbontású, jpg formátumú képet lehet megadni
 
     - Név változtatás
 
