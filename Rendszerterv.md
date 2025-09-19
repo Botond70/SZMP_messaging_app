@@ -5,11 +5,13 @@
 - A rendszer funkcióit csak bejelentkezett felhasználó használhatja.
 - Webes felület React-tal
 - Funkciókat Node.js-el
-- Adattárolás Postgre adatbázison
+- Adattárolás PostgreSQL adatbázison
 
 ## Az alkalmazásokkal szemben támasztott funkcionális követelmények
 
 - Felhasználókezelés
+- Üzenetküldés lebonyolítása
+- Kommunikációs felület kiszolgálása
 
 ## Funkcionális követelmények
 
