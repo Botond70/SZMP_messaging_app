@@ -1,0 +1,38 @@
+digraph G {
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=gray, fontsize=10];
+
+    // Csomópontok definiálása
+    start [label="Indulás\n(Felhasználó a regisztrációra kattint)", shape=Mdiamond, fillcolor=lightgreen];
+    register_page [label="Regisztrációs oldal megjelenítése", shape=box];
+    input_data [label="Felhasználó megadja az adatokat\n(Felhasználónév & Jelszó)", shape=parallelogram];
+    submit_button [label="Regisztráció gomb megnyomása", shape=box];
+    server_validation [label="Szerver oldali ellenőrzés", shape=cylinder];
+    username_exists [label="Felhasználónév foglalt?", shape=diamond, fillcolor=yellow];
+    password_strong [label="Jelszó elég erős?", shape=diamond, fillcolor=yellow];
+    db_save [label="Adatok mentése az adatbázisba", shape=box, fillcolor=lightgreen];
+    chat_page [label="Sikeres regisztráció\n(Belépés a chat felületre)", shape=box, fillcolor=lightgreen];
+    error_username [label="Hibaüzenet: 'A felhasználónév foglalt'", shape=box, fillcolor=salmon];
+    error_password [label="Hibaüzenet: 'A jelszó túl gyenge'", shape=box, fillcolor=salmon];
+    end_success [label="Sikeres regisztráció\n(Folyamat vége)", shape=Mdiamond, fillcolor=lightgreen];
+    
+    // Élek (folyamat) definiálása
+    start -> register_page [label=""];
+    register_page -> input_data [label=""];
+    input_data -> submit_button [label=""];
+    submit_button -> server_validation [label="Kérés küldése"];
+    server_validation -> username_exists [label=""];
+    
+    username_exists -> error_username [label="Igen"];
+    username_exists -> password_strong [label="Nem"];
+    
+    password_strong -> db_save [label="Igen"];
+    password_strong -> error_password [label="Nem"];
+    
+    db_save -> chat_page [label=""];
+    
+    error_username -> register_page [label="Újrapróbálkozás"];
+    error_password -> register_page [label="Újrapróbálkozás"];
+    
+    chat_page -> end_success [label=""];
+}
