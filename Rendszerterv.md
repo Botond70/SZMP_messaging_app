@@ -64,7 +64,6 @@
 
 ### Regisztráció:
 - Név
-- Email
 - Születésnap
 - Jelszó + jelszó megerősitése
 
@@ -84,7 +83,6 @@
 ### Felhasználók tábla:
     - ID
     - name
-    - email
     - birthday
     - pwd
 ### Üzenet tábla:
