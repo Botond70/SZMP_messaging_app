@@ -27,7 +27,7 @@ bejelentkezésre, profil testreszabásra, más személy keresésére és annak b
 
 ### 1.3 Bejelentkezés
 
-- 1.3.1 A felhasználok a regisztráció során megadott adataikkal  tudnak majd belépni a fiókjukba, jelszavaik titkosítva lesznel tárolva. 
+- 1.3.1 A felhasználok a regisztráció során megadott adataikkal  tudnak majd belépni a fiókjukba, jelszavaik titkosítva lesznel tárolva.
 
 ### 2.1 Felhasználói testreszabás
 
