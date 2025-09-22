@@ -1,5 +1,16 @@
 # Rendszerterv
 
+## Rendszer célja
+Egy modern, felhasználóbarát üzenetküldő alkalmazás létrehozása, amely megbízható, hatékony és biztonságos kommunikációt tesz lehetővé felhasználók között. 
+
+Valós idejű üzenetküldés lehetővé teszi azonnali üzenetek küldését és fogadását, hogy a felhasználók gyorsan tudjanak kommunikálni. Ez magában foglalja az üzenetek sorba rendezését, az olvasási visszaigazolások, illetve az üzenet státuszok kezelését (pl. elküldve, kézbesítve, olvasva).
+
+Biztosítani kell, hogy minden felhasználó regisztrálva legyen, azonosítható legyen egyedi azonosítóval (pl. felhasználónév vagy e-mail), valamint biztonságos módon tudjon bejelentkezni (pl. jelszóval, tokennel).
+
+Az adatok védelme kulcsfontosságú: üzenetek titkosítása (akár átvitel közben, akár tárolás közben), és az érzékeny adatok kezelése megfelelő biztonsági intézkedésekkel. Ezzel a felhasználói bizalom növekszik, és elkerülhetők az adatvédelmi incidensek.
+
+Az üzenetek és kapcsolódó metaadatok (pl. időpont, feladó, címzett, státusz) tárolása, hogy a felhasználók visszanézhessék a korábbi beszélgetéseket. Ugyanakkor gondoskodni kell arról, hogy az adattárolás hatékony legyen, és az adatvédelem szempontjai figyelembe legyenek véve.
+
 ## A rendszerrel szemben támasztott általános követelmények
 
 - A rendszer funkcióit csak bejelentkezett felhasználó használhatja.
