@@ -1,5 +1,5 @@
 const {connectDB, sequelize} = require('./src/config/database');
-const app = require('./src/app');
+const app = require('./app');
 
 const port = process.env.PORT || 3000;
 
