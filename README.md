@@ -13,7 +13,7 @@ Szoftverfejlesztés Módszertan Projekt
     - Vercel for frontend
     - Render for backend 
 
-## Követelmények
+## Külső függőségek
 
 - npm
 - Node
