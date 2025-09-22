@@ -181,3 +181,43 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
     - GitHub – csapatmunkához, közös kódkezeléshez és a kanbanra
     - PostgreSQL – relációs adatbázis
     - Express – backend keretrendszer
+
+    ## Tesztterv
+    A tesztelés célja annak biztosítása, hogy a rendszer minden funkcionális és nem funkcionális követelményt teljesítsen: az üzenetküldés hibamentesen működjön, a felhasználói adatok biztonságosan kezelődjenek, valamint a felület minden támogatott eszközön megfelelően jelenjen meg.
+
+    ### Tesztelési környezet
+    - Szerveroldali környezet: Flask backend, PostgreSQL adatbázis
+    - Kliensoldali környezet: modern böngészők (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari)
+    - Eszközök: PC, laptop, táblagép, okostelefon
+    -Adatbázis: tesztadatbázis (valós adatoktól elkülönítve)
+
+    ### Tesztelési módszerek
+     - Funkcionális tesztelés: az alapvető funkciók ellenőrzése (regisztráció, bejelentkezés, üzenetküldés, kijelentkezés)
+     - Integrációs tesztelés: a backend és az adatbázis, valamint a frontend és backend közötti kommunikáció ellenőrzése
+     - Terheléses tesztelés: az alkalmazás viselkedésének vizsgálata nagy számú egyidejű felhasználó esetén
+     - Biztonsági tesztelés: jogosulatlan hozzáférési próbálkozások, adatvédelem és jelszókezelés ellenőrzése
+     - Felhasználói élmény tesztelés: reszponzív megjelenés és platformfüggetlen használhatóság ellenőrzése
+
+    ### Tesztesetek
+     - Regisztráció
+        - Új felhasználó sikeres regisztrációja érvényes adatokkal
+        - Hibás adatok (pl. rövid jelszó, üres mezők) kezelése
+    - Bejelentkezés / kijelentkezés
+        - Helyes felhasználónév/jelszó páros
+        - Hibás adatok kezelése
+        - Sikeres kijelentkezés ellenőrzése
+    - Üzenetküldés
+        - Szöveges üzenet sikeres elküldése és fogadása
+        - Üres üzenet küldésének tiltása
+        - Valós idejű frissülés ellenőrzése
+    - Adatbázis műveletek
+        - Az üzenetek mentése az adatbázisba
+        - Felhasználói adatok titkosított tárolása
+        - Adatintegritás ellenőrzése
+    - Biztonság
+        - Jogosulatlan adatelérés próbálkozások (pl. más felhasználó üzeneteinek elérése)
+        - HTTPS kapcsolat ellenőrzése
+        - Cookie-k és session kezelés
+    - Teljesítmény
+        - Több egyidejű felhasználó esetén az üzenetek valós idejű kézbesítésének ellenőrzése
+        - Adatbázis válaszidők mérése
