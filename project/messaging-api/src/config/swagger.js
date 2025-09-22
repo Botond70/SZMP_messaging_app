@@ -7,7 +7,7 @@ const options = {
         info: {
             title: "Messaging API",
             version: "1.0.0",
-            description: "API documentation for your messaging app",
+            description: "API documentation",
         },
         servers: [
             {
@@ -15,7 +15,7 @@ const options = {
             },
         ],
     },
-    apis: ["./src/routes/*.js"], // Path to your route files with JSDoc comments
+    apis: ["./routes/*.js"],
 };
 
 const specs = swaggerJsdoc(options);

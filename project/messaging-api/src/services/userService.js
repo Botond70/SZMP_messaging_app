@@ -3,7 +3,15 @@ const res = require("express/lib/response");
 
 const getAllUsers = () => User.findAll();
 const getUserById = () => User.findByPk(id);
-const createUser = () => User.create(data);
+const createUser = async (data) => {
+    try{
+        const user = await User.create(data);
+        return user;
+    }
+    catch(err){
+        throw err;
+    }
+}
 const updateUser = async (id) => {
     const user = await User.findByPk(id);
     if (!user) {
