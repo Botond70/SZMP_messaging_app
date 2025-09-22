@@ -167,3 +167,17 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
 - Client (Web/React vagy mobil) ↔ HTTPS REST API (Express) — auth, üzenet előzmények, fájl feltöltés
 - Client ↔ Socket.IO (auth tokennel) — valós idejű üzenetküldés, üzenetek olvasása
 - Backend → PostgreSQL — perzisztencia (felhasználók, üzenetek, beszélgetések, csatolmányok)
+
+## Fizikai környezet
+- Az alkalmazás egy webes üzenetküldő rendszer, amely számítógépen, laptopon, táblagépen és okostelefonon egyaránt elérhető modern böngészőkön keresztül (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari)
+- A felhasználók közvetlenül az interneten keresztül csatlakoznak a szolgáltatáshoz, külön kliensalkalmazás telepítésére nincs szükség
+- A szerveroldali működést a Flask keretrendszer biztosítja, amely PostgreSQL adatbázissal kommunikál. Az adatbázis felel az üzenetek és a felhasználói adatok biztonságos tárolásáért és kezeléséért
+- Az adatátvitel titkosítva, HTTPS protokollon keresztül történik. A hálózat biztonságát tűzfal és alapvető hozzáférési szabályok garantálják
+- A JavaScript biztosítja a dinamikus és valós idejű funkciókat (például azonnali üzenetküldés, értesítések, státuszok), míg a HTML és CSS gondoskodik a felhasználói felület kialakításáról és megjelenítéséről
+
+- Fejlesztői eszközök
+    - Visual Studio Code – fejlesztői környezet
+    - Git – verziókövetés
+    - GitHub – csapatmunkához, közös kódkezeléshez és a kanbanra
+    - PostgreSQL – relációs adatbázis
+    - Express – backend keretrendszer
