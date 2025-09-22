@@ -221,3 +221,11 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
     - Teljesítmény
         - Több egyidejű felhasználó esetén az üzenetek valós idejű kézbesítésének ellenőrzése
         - Adatbázis válaszidők mérése
+
+    ## Karbantartási terv
+    - A karbantartási terve a rendszer hosszú távú stabilitását és biztonságát biztosítja
+    - A terv első lépéseként rendszeres frissítéseket kell végezni a szoftver összetevőin, beleértve a back-end és front-end függőségeket, a Docker konténereket, valamint az adatbázist
+    - A rendszer működését folyamatosan figyelni kell naplózás és monitoring eszközök segítségével, hogy időben észleljük a hibákat, teljesítménycsökkenést vagy biztonsági incidenseket
+    - Rendszeres adatbázis-mentések készítése biztosítja az adatvesztés elkerülését, míg a felhasználói fiókok és jogosultságok ellenőrzése garantálja a hozzáférések biztonságát
+    - A hibák és problémák dokumentálása, valamint a javító intézkedések rögzítése lehetővé teszi a gyors visszaállítást és a tapasztalatok felhasználását a további fejlesztések során
+    - A karbantartási terv része a rendszeres tesztelés is, amely során ellenőrizzük a funkciók működését, a rendszer integritását és a teljesítményt, így az alkalmazás hosszú távon megbízhatóan üzemel
