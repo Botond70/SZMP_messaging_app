@@ -150,3 +150,20 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
     - status
     - requested time 
 ![Baratfelvetel](./Ábrák/BaratFelvetel_graf.svg)
+
+
+## Implementációs terv
+
+### Összefoglaló
+ - MVP cél: regisztráció/bejelentkezés, 1:1 beszélgetések valós időben (küldés, fogadás, státuszok), üzenetek perzisztens tárolása, egyszerű médiafeltöltés (képek), alap biztonság (HTTPS, jelszó hash, JWT).
+ - Későbbi bővítések: csoportos chat, push értesítések, titkosítás end-to-end, skálázott üzenetsor (Redis), több szerver, monitoring és CI/CD.
+
+### Technológiai stack
+ - Backend: Node.js + Express (vagy NestJS, ha strukturáltabb kell)
+ - Adatbázis: PostgreSQL (relációs, tranzakciók, keresések)
+ - Tesztelés: Jest (unit + integration)
+
+### Architektúra
+- Client (Web/React vagy mobil) ↔ HTTPS REST API (Express) — auth, üzenet előzmények, fájl feltöltés
+- Client ↔ Socket.IO (auth tokennel) — valós idejű üzenetküldés, üzenetek olvasása
+- Backend → PostgreSQL — perzisztencia (felhasználók, üzenetek, beszélgetések, csatolmányok)
