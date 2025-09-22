@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_USER: postgre
+      POSTGRES_PASSWORD: postgre123
+      POSTGRES_DB: message_db
+    ports:
+      - "5432:5432"
+    volumes:
+    - pgdata:/var/lib/postgresqldata
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_USERNAME: admin
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: 12345678
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:

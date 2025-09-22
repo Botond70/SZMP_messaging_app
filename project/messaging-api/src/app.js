@@ -1,11 +1,20 @@
 const express = require('express');
+const apiRoutes = require('./routes');
+const cors = require('cors');
 const app = express();
-const port = 8080;
+const {swaggerUi, specs} = require('./config/swagger');
 
-app.get('/', (req,res) =>{
-    res.send('Test get call');
-});
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(port, ()=>{
-    console.log(`now listening on port:${port}`);
-});
+app.use('/api', apiRoutes);
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs));
+console.log('Swagger files loaded:', specs.paths); //
+
+
+app.get('/', (req, res) => {
+    res.send('API is running!');
+})
+
+module.exports = app;
