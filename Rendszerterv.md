@@ -13,15 +13,29 @@ Az üzenetek és kapcsolódó metaadatok (pl. időpont, feladó, címzett, stát
 
 ## A rendszerrel szemben támasztott általános követelmények
 
-- A rendszer funkcióit csak bejelentkezett felhasználó használhatja.
+- A rendszer funkcióit csak bejelentkezett felhasználó használhatja
+- A rendszernek folyamatosan elérhetőnek kell lennie a felhasználók számára, különösen a csúcsidőszakokban
+- Hibakezelés esetén a rendszer ne omoljon össze; a felhasználókat értesíteni kell az esetleges problémákról
+- A rendszernek képesnek kell lennie növekvő felhasználószám kezelésére anélkül, hogy a teljesítmény jelentősen csökkenne
+- A felhasználói adatok védelme minden kommunikáció során prioritás
+- Biztonsági események logolása és rendszeres auditálása javasolt
+- A rendszernek több platformon is működnie kell: asztali gép, mobil eszköz, különböző böngészők
+- A felület legyen intuitív és könnyen használható minden célcsoport számára
+- A kód legyen moduláris, dokumentált és könnyen bővíthető új funkciókkal
+- A verziókezelés és a kódreview folyamatok biztosítják a hosszú távú fenntarthatóságot
 - Webes felület React-tal
 - Funkciókat Node.js-el
 - Adattárolás PostgreSQL adatbázison
 
 ## Az alkalmazásokkal szemben támasztott funkcionális követelmények
 
-- Felhasználókezelés
-- Üzenetküldés lebonyolítása
+- A rendszernek biztosítania kell a felhasználók regisztrációját és bejelentkezését
+- Valós idejű üzenetküldés és fogadás egy felhasználó vagy csoport között.
+- Az üzenetek időbélyeggel és státusszal (pl. elküldve, olvasva) jelenjenek meg
+- Felhasználók gyors keresése név vagy egyéb azonosító alapján
+- Üzenetek törlése, szerkesztése (opcionális)
+- A rendszer állapotának megjelenítése (pl. szerver elérhetőség, karbantartás)
+- Hibák és problémák visszajelzése a felhasználó felé
 - Kommunikációs felület kiszolgálása
 
 ## Funkcionális követelmények
