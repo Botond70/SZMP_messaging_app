@@ -15,6 +15,44 @@
 
 ## Funkcionális követelmények
 
+### Frontend felépítése
+
+#### A frontend a React.js és a Material-UI kombinációjára épül, ami hatékony és esztétikus felhasználói felületet (UI) tesz lehetővé.
+
+ - React.js előnyei
+    - Komponensalapú architektúra: A UI elemek, mint a bejelentkezési űrlapok, a chatablakok és a felhasználói listák, független, újrahasználható komponensekként kezelhetők.
+    - Hatékony állapotkezelés: A React useState és más hookok segítségével dinamikusan frissíthető a felület az adatok változásakor (pl. új üzenet érkezésekor).
+
+ - Material-UI előnyei
+    - Gyors fejlesztés: Kész, testreszabható UI komponensek (pl. Button, TextField, List, Grid) állnak rendelkezésre, így nem kell mindent a nulláról megírni.
+    - Reszponzív design: A komponensek alapvetően reszponzívak, így a felület jól mutat különböző eszközökön és képernyőméreteken.
+    - Professzionális kinézet: A Google Material Design elveire épülő elemek egységes és modern megjelenést biztosítanak.
+
+#### A felület felépítése és a technológiák kapcsolódása
+
+A rendszerterv alapján a felület a következő fő részekre osztható, a React és Material-UI komponensek használatával:
+
+ - Bejelentkezés/Regisztráció oldal:
+    - TextField komponensek a felhasználónév és jelszó beviteléhez.
+    - Button komponensek a bejelentkezés és a regisztráció gombokhoz.
+    - A beviteli adatok a Node.js API-nak kerülnek elküldésre, ami hitelesíti a felhasználót, és JWT tokent ad vissza.
+
+ - Fő oldal:
+    - Elrendezés: A Grid és a Paper komponensekkel lehet kialakítani a bal oldali menüt és a jobb oldali chatablakot.
+    - Bal oldali menü:
+        - List vagy MenuItem komponensek a barátok, értesítések és beállítások listázásához.
+        - A felhasználói profilkép megjelenítéséhez Avatar komponens használható.
+
+ - Középső/Jobb oldali chatablak:
+    - Különálló komponens (pl. ChatWindow) kezeli a beszélgetést.
+    - Minden egyes üzenet egy ChatMessage komponens, amelynek megjelenítése függ a tartalom típusától (szöveg, kép, fájl, hangulatjel).
+
+ - Adatkommunikáció és állapotkezelés:
+    - A frontend az axios vagy a fetch segítségével kommunikál a Node.js backenddel.
+    - A felhasználói adatok (pl. barátlista, csevegések) állapotkezelőben (pl. Redux vagy React Context) tárolódnak, hogy a komponensek könnyen hozzáférhessenek és frissüljenek.
+    - Az üzenetek küldése egy API hívást indít el, ami a Node.js-en keresztül a PostgreSQL Üzenet táblájába kerül.
+
+
 ### Felhasználó által elérhető funkciók
 
 - Regisztráció
@@ -22,13 +60,14 @@
     - Adatokat Node.js kezeli
     - Adatokat PostgreSQL tárolja
 
+
 - Bejelentkezés
     - Belépés a fiókba felhasználó név és jelszó segitségével
 
 - Felhasználói testreszabás
     - Profilkép beállitás, maximum 512x512 felbontású, jpg formátumú képet lehet megadni
-
     - Név változtatás
+![Profilkepbeallitas](./Ábrák/ProfilKepBeallitas_graf.svg)
 
 - Felhasználók közötti kapcsolat
     - Felhasználó keresés
@@ -61,12 +100,13 @@
 - Felhasználónév vagy jelszó
 - Jelszó
 - Bejelentkezés gomb
+![Bejelentkezes](./Ábrák/Bejelentkezes_graf.svg)
 
 ### Regisztráció:
 - Név
-- Email
 - Születésnap
 - Jelszó + jelszó megerősitése
+![Regisztracio](./Ábrák/Regisztracio_graf.svg)
 
 ### Fő oldal:
 - Fenti rész:
@@ -84,7 +124,6 @@
 ### Felhasználók tábla:
     - ID
     - name
-    - email
     - birthday
     - pwd
 ### Üzenet tábla:
@@ -99,3 +138,4 @@
     - recipient
     - status
     - requested time 
+![Baratfelvetel](./Ábrák/BaratFelvetel_graf.svg)
