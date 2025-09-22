@@ -60,12 +60,14 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
     - Adatokat Node.js kezeli
     - Adatokat PostgreSQL tárolja
 
+
 - Bejelentkezés
     - Belépés a fiókba felhasználó név és jelszó segitségével
 
 - Felhasználói testreszabás
     - Profilkép beállitás, maximum 512x512 felbontású, jpg formátumú képet lehet megadni
     - Név változtatás
+![Profilkepbeallitas](./Ábrák/ProfilKepBeallitas_graf.svg)
 
 - Felhasználók közötti kapcsolat
     - Felhasználó keresés
@@ -98,11 +100,13 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
 - Felhasználónév vagy jelszó
 - Jelszó
 - Bejelentkezés gomb
+![Bejelentkezes](./Ábrák/Bejelentkezes_graf.svg)
 
 ### Regisztráció:
 - Név
 - Születésnap
 - Jelszó + jelszó megerősitése
+![Regisztracio](./Ábrák/Regisztracio_graf.svg)
 
 ### Fő oldal:
 - Fenti rész:
@@ -134,3 +138,4 @@ A rendszerterv alapján a felület a következő fő részekre osztható, a Reac
     - recipient
     - status
     - requested time 
+![Baratfelvetel](./Ábrák/BaratFelvetel_graf.svg)
