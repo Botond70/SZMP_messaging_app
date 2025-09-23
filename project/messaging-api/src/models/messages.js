@@ -1,6 +1,6 @@
 const express = require('express')
-const {sequelize} = require("../config/database")
-const {DataTypes} = require('sequelize')
+const {sequelize} = require("../config/database");
+const {DataTypes} = require('sequelize');
 
 const Messages = sequelize.define("Messages",
     {
