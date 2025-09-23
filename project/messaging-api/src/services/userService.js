@@ -23,7 +23,7 @@ const updateUser = async (id) => {
 const deleteUser = async (id) => {
     const user = await User.findByPk(id);
     if (!user) {
-        return null;
+        return false;
     }
     await user.destroy();
     return true;
