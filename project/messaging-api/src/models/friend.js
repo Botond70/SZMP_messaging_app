@@ -14,21 +14,20 @@ const Friend = sequelize.define("Friend",
 
         sender:
         {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
-
         },
 
         recipient:
         {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
 
         status:
         {
             type: DataTypes.ENUM("függőben", "elfogadva", "elutasitva"),
-            defaultValue: "fuggőben",
+            defaultValue: "függőben",
             allowNull: false,
         },
 

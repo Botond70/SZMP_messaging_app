@@ -76,7 +76,7 @@ describe('UserController', () => {
         req.params = {id:1}
         userService.deleteUser.mockResolvedValue(newUser);
         await userController.deleteUser(req, res);
-        expect(res.status).toHaveBeenCalledWith(204);
+        expect(res.status).toHaveBeenCalledWith(200);
         expect(res.json).toHaveBeenCalledWith({message: 'User deleted successfully'});
     })
 });
