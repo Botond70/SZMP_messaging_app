@@ -52,7 +52,7 @@ const updateMessage = async (id,data) =>
 }
 
 
-const deleteMessage = async (id) =>
+const deleteMessageById = async (id) =>
 {
     const message = await Message.findByPk(id);
 
@@ -72,6 +72,6 @@ module.exports =
     getMessageById,
     createMessage,
     updateMessage,
-    deleteMessage
+    deleteMessageById
 
 }

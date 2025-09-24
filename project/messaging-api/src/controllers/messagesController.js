@@ -65,6 +65,7 @@ const deleteMessageById = async (req, res) => {
 }
 
 module.exports = {
+    getMessagesByRecipientId,
     getMessagesByUserId,
     updateMessage,
     deleteMessageById,
