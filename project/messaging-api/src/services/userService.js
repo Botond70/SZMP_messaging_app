@@ -1,5 +1,4 @@
 const User = require('../models/User');
-const res = require("express/lib/response");
 
 const getAllUsers = () => User.findAll();
 const getUserById = () => User.findByPk(id);
@@ -12,7 +11,7 @@ const createUser = async (data) => {
         throw err;
     }
 }
-const updateUser = async (id) => {
+const updateUser = async (id,data) => {
     const user = await User.findByPk(id);
     if (!user) {
         return null;
