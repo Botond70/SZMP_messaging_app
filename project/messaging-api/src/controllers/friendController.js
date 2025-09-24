@@ -16,7 +16,7 @@ const getFriendsByUserId = async (req,res) => {
 const createFriendByUserId = async (req,res) => {
     const {sender, recipient} = req.params;
     try {
-        const newFriend = await friendService.createFriend(sender,recipient);
+        const newFriend = await friendService.createFriendByUserId(sender,recipient);
         res.status(200).json(newFriend);
     }
     catch(err){
@@ -29,7 +29,7 @@ const updateFriendById = async (req,res) => {
     const {id} = req.params;
     const {status} = req.params;
     try{
-        const updated = await friendService.updateFriendStatus(id,status);
+        const updated = await friendService.updateFriend(id,status);
         if(!updated){
             res.status(404).json({err: "Friend request not found"});
         }
@@ -44,7 +44,7 @@ const updateFriendById = async (req,res) => {
 const deleteFriendById = async (req,res) => {
     const {id} = req.params;
     try {
-        const deleted = await friendService.deleteFriendById(id);
+        const deleted = await friendService.deleteFriend(id);
         if(!deleted){
             res.status(404).json({err: "Friend request not found"});
         }
