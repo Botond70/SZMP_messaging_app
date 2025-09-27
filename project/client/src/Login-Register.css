@@ -1,4 +1,7 @@
-body, html, #root, .landing-bg {
+body,
+html,
+#root,
+.landing-bg {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -13,7 +16,8 @@ body, html, #root, .landing-bg {
   background: #000;
 }
 
-.login-container {
+.login-container,
+.register-container {
   background: rgba(20, 20, 20, 0.95);
   border-radius: 32px 32px 40px 40px;
   padding: 48px 32px 32px 32px;
@@ -44,7 +48,8 @@ body, html, #root, .landing-bg {
   outline: none;
 }
 
-.login-btn {
+.login-btn,
+.register-btn {
   width: 95%;
   margin: 24px 0 12px 0;
   padding: 16px 0;
@@ -60,11 +65,13 @@ body, html, #root, .landing-bg {
   transition: background 0.2s;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.register-btn:hover {
   background: #16a368;
 }
 
-.register-link {
+.register-link,
+.login-link {
   color: #ffd700;
   font-size: 1.2rem;
   font-family: 'Courier New', Courier, monospace;
