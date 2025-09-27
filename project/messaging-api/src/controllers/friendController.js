@@ -19,7 +19,6 @@ const createFriendByUserId = async (req,res) => {
     console.log("Recipient:", recipient);
 
     try {
-        // Pass an object with all fields to the service
         const newFriend = await friendService.createFriendByUserId({
             sender,
             recipient,
