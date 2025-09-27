@@ -1,17 +1,16 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from './Login';
+import MainPage from './MainPage';
 
 function App() {
   return (
-    <div className="landing-bg">
-      <div className="login-container">
-        <h1 className="title">DEIKTALK</h1>
-        <input className="input" type="text" placeholder="USR" />
-        <input className="input" type="password" placeholder="PSW" />
-        <button className="login-btn">LOG IN</button>
-        <div className="register-link">REGISTER</div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/chats" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
