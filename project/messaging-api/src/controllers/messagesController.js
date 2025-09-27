@@ -1,9 +1,9 @@
 const messagesService = require('../services/messagesService');
 
 const getMessagesByUserId = async (req, res) => {
-    const {id} = req.params;
+    const {userId} = req.params;
     try{
-        const messages = await messagesService.getMessagesByUserId(id);
+        const messages = await messagesService.getMessagesByUserId(userId);
         res.status(200).json({messages});
     }
     catch (error) {

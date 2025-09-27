@@ -10,10 +10,11 @@ const getFriendsByUserId = async (id) => {
         const friends = await Friend.findAll(
             {
                 where: {
-                    userId: id,
+                    sender: id,
                 }
             }
         );
+        return friends;
 
     }catch(err){
         throw err;

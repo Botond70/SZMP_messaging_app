@@ -14,16 +14,25 @@ const getFriendsByUserId = async (req,res) => {
 }
 
 const createFriendByUserId = async (req,res) => {
-    const {sender, recipient} = req.params;
+   const { sender, recipient, status, requestedtime } = req.body;
+    console.log("Sender:", sender);
+    console.log("Recipient:", recipient);
+
     try {
-        const newFriend = await friendService.createFriendByUserId(sender,recipient);
-        res.status(200).json(newFriend);
-    }
-    catch(err){
+        // Pass an object with all fields to the service
+        const newFriend = await friendService.createFriendByUserId({
+            sender,
+            recipient,
+            status: status || "függőben",
+            requestedtime: requestedtime ? new Date(requestedtime) : new Date()
+        });
+        res.status(201).json(newFriend);
+    } catch (err) {
         console.log(err);
-        res.status(500).json({err: "Failed to create Friend request"});
+        res.status(500).json({ err: "Failed to create Friend request" });
     }
 }
+
 
 const updateFriendById = async (req,res) => {
     const {id} = req.params;

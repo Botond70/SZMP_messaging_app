@@ -28,7 +28,7 @@ const
  *         description: Messages not found
  */
 
-router.get('/user/:userId', getMessagesByUserId);
+router.get('/:userId', getMessagesByUserId);
 
 
 

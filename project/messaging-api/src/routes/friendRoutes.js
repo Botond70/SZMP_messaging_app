@@ -28,12 +28,12 @@ const
  *         description: Friend not found
  */
 
-router.get('/user/:userId', getFriendsByUserId);
+router.get('/:userId', getFriendsByUserId);
 
 
 /**
  * @swagger
- * /friends/{userId}:
+ * /friends/{sender}/{recipient}:
  *   post:
  *     summary: Create a new friend by ID
  *     tags: [Friends]
@@ -66,7 +66,7 @@ router.get('/user/:userId', getFriendsByUserId);
  *       404:
  *         description: Friend not found
  */
-router.post('/user/:userId', createFriendByUserId);
+router.post('/:sender/:recipient', createFriendByUserId);
 
 
 /**

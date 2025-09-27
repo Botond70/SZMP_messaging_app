@@ -28,19 +28,19 @@ const Friend = sequelize.define("Friend",
         {
             type: DataTypes.ENUM("függőben", "elfogadva", "elutasitva"),
             defaultValue: "függőben",
-            allowNull: false,
+            allowNull: true,
         },
-
+/**
         requestedtime:
         {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
         },
-
+**/
     },
     {
         tableName: "friends",
-        timestamps: false
+        timestamps: true
     }
 
 

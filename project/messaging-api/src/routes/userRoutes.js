@@ -59,7 +59,7 @@ router.get('/:id', getUserById);
  *                 type: string
  *               birthday:
  *                 type: string
- *                 format: date
+ *                 format: time
  *     responses:
  *       201:
  *         description: User created
