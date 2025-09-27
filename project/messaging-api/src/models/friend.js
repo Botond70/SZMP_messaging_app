@@ -39,13 +39,13 @@ const Friend = sequelize.define("Friend",
 
     },
     {
-        tablename: "friends",
+        tableName: "friends",
         timestamps: false
     }
 
 
 );
 
-sequelize.sync().then(() => console.log("Barátok tábla létrehozva"));
+sequelize.sync({alter:true}).then(() => console.log("Barátok tábla létrehozva")).catch(err => console.log(err));
 
 module.exports = Friend;
