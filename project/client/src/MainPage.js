@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './MainPage.css';
 import { getCookie } from './Utils';
+
 
 function fetchAllUserData() {
     // Placeholder for API call to fetch user data
@@ -20,8 +22,17 @@ function constructFriend(Username, Avatar, Iter) {
     );
 }
 
+
+
 function MainPage() {
+    const nav = useNavigate();
     let userid = getCookie("user");
+    useEffect(() => {
+        if (userid === "" || userid === null || userid === "Null") {
+            console.log("Empty userid, please log in again.")
+            nav("/");
+        };
+    }, [userid]);
     console.log("logged in as: " + userid);
     const { usernames, avatars } = fetchAllUserData();
     var friendsList = [];
