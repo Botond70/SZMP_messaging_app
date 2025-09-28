@@ -2,12 +2,14 @@ const messagesService = require('../services/messagesService');
 
 // Módosított függvény, ami két felhasználói ID alapján kéri le az üzeneteket
 const getMessagesByUserId = async (req, res) => {
+
     const { userId1, userId2 } = req.params;
     try {
         // Mivel a `getMessagesByUserId` a service-ben csak egy ID-t vár,
         // érdemes a `getMessagesByRecipientId`-t hívni, ami már a két ID-t is tudja kezelni
         const messages = await messagesService.getMessagesByRecipientId(userId1, userId2);
         res.status(200).json({ messages });
+
     }
     catch (error) {
         console.error(error);

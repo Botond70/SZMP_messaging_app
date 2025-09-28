@@ -28,24 +28,25 @@ const Friend = sequelize.define("Friend",
         {
             type: DataTypes.ENUM("függőben", "elfogadva", "elutasitva"),
             defaultValue: "függőben",
-            allowNull: false,
+            allowNull: true,
         },
-
+/**
         requestedtime:
         {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
         },
-
+**/
     },
     {
-        tablename: "friends",
-        timestamps: false
+        tableName: "friends",
+        timestamps: true
     }
 
 
 );
 
-//sequelize.sync().then(() => console.log("Barátok tábla létrehozva"));
+sequelize.sync({alter:true}).then(() => console.log("Barátok tábla létrehozva")).catch(err => console.log(err));
+
 
 module.exports = Friend;

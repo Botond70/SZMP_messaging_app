@@ -36,6 +36,7 @@ const
 // MÓDOSÍTOTT GET ÚTVONAL
 router.get('/history/:userId1/:userId2', getMessagesByUserId);
 
+
 /**
  * @swagger
  * /messages:
