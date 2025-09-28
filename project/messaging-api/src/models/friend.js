@@ -48,4 +48,5 @@ const Friend = sequelize.define("Friend",
 
 sequelize.sync({alter:true}).then(() => console.log("Barátok tábla létrehozva")).catch(err => console.log(err));
 
+
 module.exports = Friend;

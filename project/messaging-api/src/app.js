@@ -8,6 +8,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
+
 app.use('/api', apiRoutes);
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs));
 console.log('Swagger files loaded:', specs.paths); //

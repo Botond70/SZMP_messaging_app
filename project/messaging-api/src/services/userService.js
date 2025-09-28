@@ -1,17 +1,18 @@
-const User = require('../models/User');
+const User = require('../models/user');
 
 const getAllUsers = () => User.findAll();
-const getUserById = () => User.findByPk(id);
+const getUserById = (id) => User.findByPk(id);
+
 const createUser = async (data) => {
-    try{
+    try {
         const user = await User.create(data);
         return user;
     }
-    catch(err){
+    catch (err) {
         throw err;
     }
 }
-const updateUser = async (id,data) => {
+const updateUser = async (id, data) => {
     const user = await User.findByPk(id);
     if (!user) {
         return null;
@@ -28,10 +29,15 @@ const deleteUser = async (id) => {
     return true;
 }
 
+const getUserByName = async (name) => {
+    return await User.findOne({ where: { name } });
+};
+
 module.exports = {
     getAllUsers,
     getUserById,
     createUser,
     updateUser,
     deleteUser,
+    getUserByName,
 }

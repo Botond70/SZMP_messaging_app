@@ -1,4 +1,16 @@
 services:
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+
+  api:
+    build: ./messaging-api
+    container_name: messaging-api-container
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
   postgres:
     image: postgres:17
     container_name: postgres-container
@@ -10,8 +22,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-    - pgdata:/var/lib/postgresqldata
-
+      - pgdata:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin-container
@@ -27,3 +38,5 @@ services:
 
 volumes:
   pgdata:
+
+

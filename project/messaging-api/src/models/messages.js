@@ -44,5 +44,6 @@ const Messages = sequelize.define("Messages",
 
 );
 
-sequelize.sync().then(() => console.log("Üzenetek tábla létrehozva"));
+//sequelize.sync().then(() => console.log("Üzenetek tábla létrehozva"));
+
 module.exports = Messages;

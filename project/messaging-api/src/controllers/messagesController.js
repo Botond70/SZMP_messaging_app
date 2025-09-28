@@ -1,40 +1,44 @@
 const messagesService = require('../services/messagesService');
 
+// Módosított függvény, ami két felhasználói ID alapján kéri le az üzeneteket
 const getMessagesByUserId = async (req, res) => {
-    const {userId} = req.params;
-    try{
-        const messages = await messagesService.getMessagesByUserId(userId);
-        res.status(200).json({messages});
+
+    const { userId1, userId2 } = req.params;
+    try {
+        // Mivel a `getMessagesByUserId` a service-ben csak egy ID-t vár,
+        // érdemes a `getMessagesByRecipientId`-t hívni, ami már a két ID-t is tudja kezelni
+        const messages = await messagesService.getMessagesByRecipientId(userId1, userId2);
+        res.status(200).json({ messages });
+
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: "Failed to get messages by user id"});
+        res.status(500).json({ error: "Failed to get messages by user id" });
     }
 }
 
 const getMessagesByRecipientId = async (req, res) => {
-    const {senderID, recipientID} = req.params;
+    const { senderID, recipientID } = req.params;
     try {
         const messages = await messagesService.getMessagesByRecipientId(senderID, recipientID);
-        res.status(200).json({messages: messages});
-    }
-    catch (error) {
-        console.log(error);
-        res.status(500).json({error: "Failed to get messages by recipient id"});
+        res.status(200).json({ messages: messages });
+    } catch (error) {
+        console.error(error); // This will log the actual error to your server console
+        res.status(500).json({ error: "Failed to get messages by recipient id" });
     }
 }
 
 const updateMessage = async (req, res) => {
-    const {id} = req.params;
+    const { id } = req.params;
     try {
         const message = await messagesService.updateMessage(id, req.body);
         if (!message) {
-            res.status(404).json({error: 'Message not found'});
+            res.status(404).json({ error: 'Message not found' });
         }
         res.json(message);
     }
     catch (error) {
-        res.status(500).json({error: "Failed to update message"});
+        res.status(500).json({ error: "Failed to update message" });
     }
 }
 
@@ -50,17 +54,17 @@ const createMessage = async (req, res) => {
 }
 
 const deleteMessageById = async (req, res) => {
-    const {id} = req.params;
-    try{
+    const { id } = req.params;
+    try {
         const deleted = await messagesService.deleteMessageById(id);
         if (!deleted) {
-            res.status(404).json({error: 'Message not found'});
+            res.status(404).json({ error: 'Message not found' });
         }
-        res.status(200).json({message: 'Message deleted'});
+        res.status(200).json({ message: 'Message deleted' });
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: "Failed to delete message by id"});
+        res.status(500).json({ error: "Failed to delete message by id" });
     }
 }
 
