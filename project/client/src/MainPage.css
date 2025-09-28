@@ -52,7 +52,6 @@
     top: 0;
     left: 0;
     z-index: 2;
-    border: thin solid green;
 }
 
 .avatar,
@@ -62,7 +61,6 @@
     border-radius: 50%;
     border: thin solid #555;
     margin: 10px auto 5px auto;
-    border: 2px solid #0f0;
 }
 
 
@@ -71,7 +69,6 @@
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 0.1em;
-    border: thin solid yellow;
 }
 
 .chats {
@@ -79,7 +76,6 @@
     flex-grow: 1;
     overflow-y: auto;
     height: calc(100vh - var(--top-space));
-    border: thin solid blue;
     z-index: 2;
 }
 
@@ -124,7 +120,6 @@
     justify-content: flex-start;
     padding: 2px;
     box-sizing: border-box;
-    border: thin solid red;
     z-index: 1;
 }
 
@@ -138,7 +133,6 @@
     font-weight: bold;
     color: #0f0;
     letter-spacing: 0.1em;
-    border: thin solid orange;
 }
 
 .chat-user-info {
@@ -146,7 +140,6 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    border: 2px solid #0f0;
 }
 
 .chat-user-avatar {
@@ -172,7 +165,6 @@
     overflow-y: auto;
     padding: 10px;
     box-sizing: border-box;
-    border: thin solid purple;
 }
 
 .chat-input {
@@ -183,7 +175,6 @@
     background-color: #222;
     display: flex;
     align-items: center;
-    border: thin solid pink;
 }
 
 .chat-input-box {

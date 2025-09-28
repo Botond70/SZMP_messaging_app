@@ -77,7 +77,7 @@ function MainPage() {
             }
         }
     };
-    
+
     const chattableUsers = allusers.filter(user => user.id + "" !== userid);
 
     const avatar = "https://cdn-icons-png.flaticon.com/256/983/983929.png";
@@ -101,7 +101,7 @@ function MainPage() {
                     <div className="chat-user-info">
                         <div className="chat-user-avatar"></div>
                         <div className="chat-user-name">
-                            {selectedUser ? `Chattelés vele: ${selectedUser.name}` : "Válassz egy felhasználót a bal oldali listából!"}
+                            {selectedUser ? `Chatelés vele: ${selectedUser.name}` : "Válassz egy felhasználót a bal oldali listából!"}
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@ function MainPage() {
                         </div>
                     ))}
                 </div>
-                
+
                 <div className="chat-input">
                     <input
                         type="text"
