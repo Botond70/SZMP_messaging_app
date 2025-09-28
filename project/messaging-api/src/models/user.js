@@ -1,10 +1,10 @@
 const express = require('express')
-const {sequelize} = require("../config/database");
-const {DataTypes} = require("sequelize");
+const { sequelize } = require("../config/database");
+const { DataTypes } = require("sequelize");
 
 
 const User = sequelize.define("User", {
-    id:{
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -21,7 +21,7 @@ const User = sequelize.define("User", {
     birthday: {
         type: DataTypes.DATE,
         allowNull: false,
-    },
+    }
 
 },
     {

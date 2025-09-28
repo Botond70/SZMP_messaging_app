@@ -2,6 +2,7 @@ const User = require('../models/user');
 
 const getAllUsers = () => User.findAll();
 const getUserById = () => User.findByPk(id);
+
 const createUser = async (data) => {
     try {
         const user = await User.create(data);

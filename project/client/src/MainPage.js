@@ -1,5 +1,6 @@
 import React from 'react';
 import './MainPage.css';
+import { getCookie } from './Utils';
 
 function fetchAllUserData() {
     // Placeholder for API call to fetch user data
@@ -8,23 +9,25 @@ function fetchAllUserData() {
     return { usernames: NamesArray, avatars: AvatarsArray };
 }
 
-function constructFriend(Username, Avatar) {
+function constructFriend(Username, Avatar, Iter) {
     return (
-        <div className="chat-item">
-            <div className="chat-item-avatar">
-                <img src={Avatar} alt={`img`} />
+        <div key={4 * Iter} className="chat-item">
+            <div key={4 * Iter + 1} className="chat-item-avatar">
+                <img key={4 * Iter + 2} src={Avatar} alt={`img`} />
             </div>
-            <div className="chat-item-username">{Username}</div>
+            <div key={4 * Iter + 3} className="chat-item-username">{Username}</div>
         </div>
     );
 }
 
 function MainPage() {
+    let userid = getCookie("user");
+    console.log("logged in as: " + userid);
     const { usernames, avatars } = fetchAllUserData();
     var friendsList = [];
 
     for (let i = 0; i < usernames.length; i++) {
-        friendsList.push(constructFriend(usernames[i], avatars[i]));
+        friendsList.push(constructFriend(usernames[i], avatars[i], i));
     }
 
 

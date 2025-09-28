@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login-Register.css';
+import { setCookie } from './Utils';
 
 function RegisterPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [birthday, setBirthday] = useState("");
-    const [isRegistered, setIsRegistered] = useState(false);
     const [error, setError] = useState("");
     const nav = useNavigate();
 
@@ -29,7 +29,13 @@ function RegisterPage() {
                 })
             });
             if (res.status === 201) {
-                setIsRegistered(true);
+                let res_json = res.json();
+                res_json.then(data => {
+                    console.log(data.message);
+                    const parsed_user_token = "" + data.userid;
+                    setCookie("user", parsed_user_token, 30);
+                    nav("/chats");
+                });
             } else if (res.status === 400) {
                 setError("Hiányzó vagy hibás adat!");
             } else if (res.status === 500) {
@@ -43,11 +49,6 @@ function RegisterPage() {
         }
     };
 
-    React.useEffect(() => {
-        if (isRegistered) {
-            nav("/chats");
-        }
-    }, [isRegistered, nav]);
 
     return (
         <div className="landing-bg">

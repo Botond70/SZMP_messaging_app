@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login-Register.css';
+import { setCookie } from './Utils';
 
 function LoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const nav = useNavigate();
+
 
     const handleLogin = async () => {
         setError("");
@@ -26,8 +28,14 @@ function LoginPage() {
                 })
             });
             if (res.status === 200) {
-                // Optionally store user/token here
-                nav("/chats");
+                let res_json = res.json();
+                res_json.then(data => {
+                    console.log(data.message);
+                    const parsed_user_token = "" + data.userid;
+                    setCookie("user", parsed_user_token, 30);
+                    nav("/chats");
+                });
+
             } else if (res.status === 401) {
                 setError("Hibás felhasználónév vagy jelszó!");
             } else {
@@ -35,6 +43,7 @@ function LoginPage() {
             }
         } catch (err) {
             setError("Nem sikerült kapcsolódni a szerverhez.");
+            console.log(err);
         }
     };
 

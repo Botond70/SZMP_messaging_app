@@ -8,22 +8,22 @@ const getUsers = async (req, res) => {
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: 'Failed to get users'});
+        res.status(500).json({ error: 'Failed to get users' });
     }
 }
 
 const getUserById = async (req, res) => {
     const { id } = req.params;
-    try{
+    try {
         const user = await userService.getUserById(id);
         if (!user) {
-            res.status(404).json({error: 'User not found'});
+            res.status(404).json({ error: 'User not found' });
         }
         res.json(user);
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: 'Failed to get user by id'});
+        res.status(500).json({ error: 'Failed to get user by id' });
     }
 }
 
@@ -34,7 +34,7 @@ const createUser = async (req, res) => {
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: 'Failed to create user'});
+        res.status(500).json({ error: 'Failed to create user' });
     }
 }
 
@@ -43,13 +43,13 @@ const updateUser = async (req, res) => {
     try {
         const user = await userService.updateUser(id, req.body);
         if (!user) {
-            res.status(404).json({error: 'User not found'});
+            res.status(404).json({ error: 'User not found' });
         }
         res.json(user);
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: 'Failed to update user'});
+        res.status(500).json({ error: 'Failed to update user' });
     }
 }
 
@@ -58,15 +58,16 @@ const deleteUser = async (req, res) => {
     try {
         const deleted = await userService.deleteUser(id);
         if (!deleted) {
-            res.status(404).json({error: 'User not found'});
+            res.status(404).json({ error: 'User not found' });
         }
-        res.status(200).json({message: 'User deleted successfully'});
+        res.status(200).json({ message: 'User deleted successfully' });
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({error: 'Failed to delete user'});
+        res.status(500).json({ error: 'Failed to delete user' });
     }
 }
+
 
 const loginUser = async (req, res) => {
     const { name, password } = req.body;
@@ -75,7 +76,9 @@ const loginUser = async (req, res) => {
         if (!user || user.password !== password) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
-        res.status(200).json({ message: 'Login successful', user });
+        let userid = user.id;
+        console.log("User id: " + userid);
+        res.status(200).json({ message: 'Login successful', userid });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Failed to login' });

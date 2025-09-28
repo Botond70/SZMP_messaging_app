@@ -3,12 +3,7 @@ services:
     build: ./client
     ports:
       - "3000:3000"
-    depends_on:
-      - server
-  server:
-    build: ./server
-    ports:
-      - "5000:5000"
+
   api:
     build: ./messaging-api
     container_name: messaging-api-container
@@ -41,8 +36,7 @@ services:
     depends_on:
       - postgres
 
-
-
 volumes:
   pgdata:
+
 
