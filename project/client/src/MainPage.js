@@ -1,22 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './MainPage.css';
-import { getCookie, sendFetchUserByIdRequest } from './Utils';
+import { getCookie, sendFetchUserByIdRequest, sendFetchAllUsers } from './Utils';
 
-let friendChat;
-
-function fetchAllUserData() {
-    // Placeholder for API call to fetch user data
-    let NamesArray = ["Alice", "Bob", "Charlie"];
-    const AvatarsArray = ['avatar1.png', 'avatar2.png', 'avatar3.png'];
-    return { usernames: NamesArray, avatars: AvatarsArray };
-}
 
 function constructFriend(Username, Avatar, Iter) {
     return (
         <div key={4 * Iter} className="chat-item">
             <div key={4 * Iter + 1} className="chat-item-avatar">
-                <img key={4 * Iter + 2} src={Avatar} alt={`img`} />
+                <img key={4 * Iter + 2} className="chat-item-avatar-image" src={Avatar} alt={`img`} />
             </div>
             <div key={4 * Iter + 3} className="chat-item-username">{Username}</div>
         </div>
@@ -26,6 +18,7 @@ function constructFriend(Username, Avatar, Iter) {
 function MainPage() {
     const nav = useNavigate();
     const [username, setUsername] = useState("");
+    const [allusers, setAllUsers] = useState([]);
     let userid = getCookie("user");
 
     useEffect(() => {
@@ -42,14 +35,21 @@ function MainPage() {
 
     console.log("logged in as: " + userid + ", " + username);
 
+    useEffect(() => {
+        sendFetchAllUsers().then(users => {
+            if (users) {
+                setAllUsers(users);
+            }
+        });
+    }, []);
+
+    const chattableUsers = allusers.filter(user => user.id + "" !== userid);
 
 
-    const { usernames, avatars } = fetchAllUserData();
-    var friendsList = [];
-
-    for (let i = 0; i < usernames.length; i++) {
-        friendsList.push(constructFriend(usernames[i], avatars[i], i));
-    }
+    const avatar = "https://cdn-icons-png.flaticon.com/256/983/983929.png";
+    const friendsList = chattableUsers.map((user, i) =>
+        constructFriend(user.name, avatar, i)
+    );
 
 
     return (

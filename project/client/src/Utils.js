@@ -56,3 +56,15 @@ export async function sendFetchUserByIdRequest(userId) {
     const data = await res.json();
     return data;
 }
+
+export async function sendFetchAllUsers() {
+    const res = await fetch("http://localhost:3001/api/users/", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data;
+}

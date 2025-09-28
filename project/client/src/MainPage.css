@@ -55,7 +55,8 @@
     border: thin solid green;
 }
 
-.avatar {
+.avatar,
+.avatar>img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -63,6 +64,7 @@
     margin: 10px auto 5px auto;
     border: 2px solid #0f0;
 }
+
 
 .username {
     color: #0f0;
@@ -98,7 +100,8 @@
     background-color: #333;
 }
 
-.chat-item-avatar {
+.chat-item-avatar,
+.chat-item-avatar-image {
     width: min(5vw, 60px);
     height: min(5vw, 60px);
     border-radius: 50%;
