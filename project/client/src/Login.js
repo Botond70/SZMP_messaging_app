@@ -21,7 +21,7 @@ function LoginPage() {
             if (res.status === 200) {
                 let res_json = res.json();
                 res_json.then(data => {
-                    console.log(data.message);
+                    //console.log(data.message);
                     const parsed_user_token = "" + data.userid;
                     setCookie("user", parsed_user_token, 30);
                     nav("/chats");

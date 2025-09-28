@@ -33,7 +33,9 @@ function MainPage() {
         }
     }, [userid, nav]);
 
-    console.log("logged in as: " + userid + ", " + username);
+    useEffect(() => {
+        console.log("logged in as: " + userid + ", " + username);
+    }, [userid, username]);
 
     useEffect(() => {
         sendFetchAllUsers().then(users => {

@@ -32,7 +32,8 @@ const getUserById = async (req, res) => {
 const createUser = async (req, res) => {
     try {
         const user = await userService.createUser(req.body);
-        res.status(201).json(user);
+        let userid = user.id;
+        res.status(201).json({ message: 'Login successful', userid });
     }
     catch (error) {
         console.error(error);
@@ -79,7 +80,7 @@ const loginUser = async (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
         let userid = user.id;
-        console.log("User id: " + userid);
+        //console.log("User id: " + userid);
         res.status(200).json({ message: 'Login successful', userid });
     } catch (error) {
         console.error(error);
