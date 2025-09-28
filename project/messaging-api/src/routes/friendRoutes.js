@@ -1,5 +1,6 @@
 const express = require('express');
 router = express.Router();
+const { loginUser } = require('../controllers/userController');
 
 const
 {
@@ -132,5 +133,7 @@ router.put('/:id', updateFriendById);
  */
 router.delete('/:id', deleteFriendById);
 
+
+router.post('/login', loginUser);
 
 module.exports = router;

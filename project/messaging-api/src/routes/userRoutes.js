@@ -1,5 +1,6 @@
 const express = require('express');
 router = express.Router();
+const { loginUser } = require('../controllers/userController');
 
 const {
     getUsers,
@@ -115,5 +116,7 @@ router.put('/:id', updateUser);
  *         description: User deleted
  */
 router.delete('/:id', deleteUser);
+
+router.post('/login', loginUser);
 
 module.exports = router;
