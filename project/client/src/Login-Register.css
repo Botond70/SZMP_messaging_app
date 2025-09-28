@@ -71,11 +71,32 @@ html,
 }
 
 .register-link,
-.login-link {
+.register-link:link,
+.register-link:visited,
+.login-link,
+.login-link:link,
+.login-link:visited {
   color: #ffd700;
   font-size: 1.2rem;
   font-family: 'Courier New', Courier, monospace;
   margin-top: 8px;
   cursor: pointer;
-  text-decoration: underline;
+}
+
+.register-link:hover,
+.login-link:hover {
+  color: #ffa500;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.register-link:active,
+.login-link:active {
+  color: #542ca0;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 8px;
+  cursor: pointer;
 }

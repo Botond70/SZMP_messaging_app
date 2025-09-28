@@ -37,7 +37,7 @@ function LoginPage() {
                 <input onChange={(e) => setUsername(e.target.value)} className="input" type="text" placeholder="USR" />
                 <input onChange={(e) => setPassword(e.target.value)} className="input" type="password" placeholder="PSW" />
                 <button onClick={handleLogin} className="login-btn">LOG IN</button>
-                <div className="register-link"><Link to="/register">Don't have an account? Register now!</Link></div>
+                <div className="register-link-container"><Link to="/register" className="register-link">Don't have an account? Register now!</Link></div>
             </div>
         </div>
     );

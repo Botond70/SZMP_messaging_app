@@ -40,7 +40,7 @@ function RegisterPage() {
                 <input onChange={(e) => setUsername(e.target.value)} className="input" type="text" placeholder="USR" />
                 <input onChange={(e) => setPassword(e.target.value)} className="input" type="password" placeholder="PSW" />
                 <button onClick={handleReg} className="register-btn">Register</button>
-                <div className="login-link"><Link to="/">Already have an account? Log in!</Link></div>
+                <div className="login-link-container"><Link to="/" className="login-link">Already have an account? Log in!</Link></div>
             </div>
         </div>
     );
