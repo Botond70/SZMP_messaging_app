@@ -1,7 +1,33 @@
 import React from 'react';
 import './MainPage.css';
 
+function fetchAllUserData() {
+    // Placeholder for API call to fetch user data
+    let NamesArray = ["Alice", "Bob", "Charlie"];
+    const AvatarsArray = ['avatar1.png', 'avatar2.png', 'avatar3.png'];
+    return { usernames: NamesArray, avatars: AvatarsArray };
+}
+
+function constructFriend(Username, Avatar) {
+    return (
+        <div className="chat-item">
+            <div className="chat-item-avatar">
+                <img src={Avatar} alt={`img`} />
+            </div>
+            <div className="chat-item-username">{Username}</div>
+        </div>
+    );
+}
+
 function MainPage() {
+    const { usernames, avatars } = fetchAllUserData();
+    var friendsList = [];
+
+    for (let i = 0; i < usernames.length; i++) {
+        friendsList.push(constructFriend(usernames[i], avatars[i]));
+    }
+
+
     return (
         <div className="main-page">
             <div className="sidebar">
@@ -10,7 +36,7 @@ function MainPage() {
                     <div className="username">Username</div>
                 </div>
                 <div className="chats">
-
+                    {friendsList}
                 </div>
             </div>
             <div className="open-chat">

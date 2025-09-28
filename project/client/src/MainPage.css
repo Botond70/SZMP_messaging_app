@@ -1,7 +1,7 @@
 :root {
     --top-space: 120px;
-    --sidebar-width: 20vw;
-    --chat-width: 80vw;
+    --sidebar-width: max(20vw, 300px);
+    --chat-width: calc(100vw - var(--sidebar-width));
 }
 
 .main-page {
@@ -55,6 +55,23 @@
     border: thin solid green;
 }
 
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: thin solid #555;
+    margin: 10px auto 5px auto;
+    border: 2px solid #0f0;
+}
+
+.username {
+    color: #0f0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: thin solid yellow;
+}
+
 .chats {
     width: 100%;
     flex-grow: 1;
@@ -63,6 +80,36 @@
     border: thin solid blue;
     z-index: 2;
 }
+
+.chat-item {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.chat-item:hover {
+    background-color: #222;
+}
+
+.chat-item.active {
+    background-color: #333;
+}
+
+.chat-item-avatar {
+    width: min(5vw, 60px);
+    height: min(5vw, 60px);
+    border-radius: 50%;
+    border: thin solid #555;
+}
+
+.chat-item-username {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .open-chat {
     margin-left: var(--sidebar-width);
@@ -91,6 +138,30 @@
     border: thin solid orange;
 }
 
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 2px solid #0f0;
+}
+
+.chat-user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: thin solid #555;
+    margin-right: 15px;
+
+}
+
+.chat-user-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f0;
+    letter-spacing: 0.1em;
+}
+
 .chat-messages {
     flex-grow: 1;
     width: 100%;
@@ -110,4 +181,25 @@
     display: flex;
     align-items: center;
     border: thin solid pink;
+}
+
+.chat-input-box {
+    flex-grow: 1;
+    width: 100%;
+    padding: 10px;
+    border: thin solid #555;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.send-button {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background-color: #0a74da;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
 }
