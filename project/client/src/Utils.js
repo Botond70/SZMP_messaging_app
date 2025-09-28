@@ -68,3 +68,51 @@ export async function sendFetchAllUsers() {
     const data = await res.json();
     return data;
 }
+
+
+export async function sendFetchChatHistoryRequest(userId1, userId2) {
+    if (!userId1 || !userId2) return null;
+    try {
+        // A backend által várt végpont: /api/messages/recipient/:senderID/:recipientID
+        const res = await fetch(`http://localhost:3001/api/messages/recipient/${userId1}/${userId2}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!res.ok) throw new Error(`Server responded with status ${res.status}`);
+        
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error("Hiba a chat előzmények lekérésében:", error);
+        return null;
+    }
+}
+
+export async function sendChatMessage(senderId, recipientId, content) {
+    if (!senderId || !recipientId || !content) return null;
+    try {
+        const res = await fetch("http://localhost:3001/api/messages/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                senderID: senderId,
+                recipientID: recipientId,
+                content: content,
+                sentTime: new Date() // Ezt a sort kell hozzáadnod
+            })
+        });
+
+        if (!res.ok) throw new Error(`Server responded with status ${res.status}`);
+
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error("Hiba az üzenet küldésében:", error);
+        return null;
+    }
+}
