@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login-Register.css';
-import { setCookie } from './Utils';
+import { setCookie, sendLoginRequest } from './Utils';
 
 function LoginPage() {
     const [username, setUsername] = useState("");
@@ -17,16 +17,7 @@ function LoginPage() {
             return;
         }
         try {
-            const res = await fetch("http://localhost:3001/api/users/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: username,
-                    password
-                })
-            });
+            const res = await sendLoginRequest(username, password);
             if (res.status === 200) {
                 let res_json = res.json();
                 res_json.then(data => {

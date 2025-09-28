@@ -16,3 +16,30 @@ export function getCookie(name) {
     }
     return null;
 };
+
+export async function sendLoginRequest(username, password) {
+    return fetch("http://localhost:3001/api/users/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: username,
+            password
+        })
+    });
+};
+
+export async function sendRegisterRequest(username, password, birthday) {
+    return fetch("http://localhost:3001/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: username,
+            password,
+            birthday
+        })
+    });
+};
