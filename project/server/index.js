@@ -9,3 +9,8 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.get('/api/status', (req, res) => {
+  res.json({ status: 'Server is running' });
+
+});

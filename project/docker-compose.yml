@@ -9,3 +9,8 @@ services:
     build: ./server
     ports:
       - "5000:5000"
+  api:
+    build: ./messaging-api
+    container_name: messaging-api-container
+    ports:
+      - "3001:3001"

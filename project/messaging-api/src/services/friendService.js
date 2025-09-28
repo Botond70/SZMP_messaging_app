@@ -1,4 +1,4 @@
-const Friend = require('../models/Friend');
+const Friend = require('../models/friend');
 const res = require("express/lib/response");
 
 
@@ -6,7 +6,7 @@ const getAllFriends = () => Friend.findAll();
 const getFriendById = () => Friend.findByPk(id);
 
 const getFriendsByUserId = async (id) => {
-    try{
+    try {
         const friends = await Friend.findAll(
             {
                 where: {
@@ -15,47 +15,40 @@ const getFriendsByUserId = async (id) => {
             }
         );
 
-    }catch(err){
+    } catch (err) {
         throw err;
     }
 }
 
-const createFriendByUserId = async (data) =>
-{
-    try
-    {
+const createFriendByUserId = async (data) => {
+    try {
         const friend = await Friend.create(data);
         return friend;
     }
-    catch(error)
-    {
+    catch (error) {
         throw error;
     }
 }
 
-const updateFriend = async (id,data) =>
-{
+const updateFriend = async (id, data) => {
     const friend = await Friend.findByPk(id);
-    if (!friend)
-    {
+    if (!friend) {
         return false;
     }
     await friend.update(data);
     return true;
 }
 
-const deleteFriend = async (id) =>
-{
+const deleteFriend = async (id) => {
     const friend = await Friend.findByPk(id);
-    if (!friend)
-    {
+    if (!friend) {
         return false;
     }
     await friend.destroy();
     return true;
 }
 
-module.exports = 
+module.exports =
 {
     getAllFriends,
     getFriendById,

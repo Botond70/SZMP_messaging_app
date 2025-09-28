@@ -1,4 +1,4 @@
-const Message = require('../models/Messages');
+const Message = require('../models/messages');
 const res = require("express/lib/response");
 
 const getAllMessages = () => Message.findAll();
@@ -25,25 +25,20 @@ const getMessagesByRecipientId = (sId, rId) => {
     );
 };
 
-const createMessage = async (data) => 
-{
-    try
-    {
+const createMessage = async (data) => {
+    try {
         const message = await Message.create(data);
         return message;
     }
-    catch(error)
-    {
+    catch (error) {
         throw error;
     }
 }
 
 
-const updateMessage = async (id,data) =>
-{
+const updateMessage = async (id, data) => {
     const message = await Message.findByPk(id);
-    if (!message)
-    {
+    if (!message) {
         return false;
     }
     await message.update(data);
@@ -52,19 +47,17 @@ const updateMessage = async (id,data) =>
 }
 
 
-const deleteMessageById = async (id) =>
-{
+const deleteMessageById = async (id) => {
     const message = await Message.findByPk(id);
 
-    if (!message)
-    {
+    if (!message) {
         return false;
     }
     await message.destroy();
     return true;
 }
 
-module.exports = 
+module.exports =
 {
     getMessagesByRecipientId,
     getMessagesByUserId,
