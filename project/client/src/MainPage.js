@@ -1,32 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './MainPage.css';
-import { getCookie } from './Utils';
+import { getCookie, sendFetchUserByIdRequest } from './Utils';
 
 let friendChat;
 
 function fetchAllUserData() {
     // Placeholder for API call to fetch user data
     let NamesArray = ["Alice", "Bob", "Charlie"];
-    fetch('http://localhost:3001/api/users/')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            data.forEach((user) => {
-                let userID = getCookie("user");
-                NamesArray = [];
-                if (userID != user.id) {
-                    NamesArray.push(user.name);
-                }
-            })
-        })
-        .catch(error => {
-            console.error('Error fetching users:', error);
-        });
     const AvatarsArray = ['avatar1.png', 'avatar2.png', 'avatar3.png'];
     return { usernames: NamesArray, avatars: AvatarsArray };
 }
@@ -44,14 +25,25 @@ function constructFriend(Username, Avatar, Iter) {
 
 function MainPage() {
     const nav = useNavigate();
+    const [username, setUsername] = useState("");
     let userid = getCookie("user");
+
     useEffect(() => {
         if (userid === "" || userid === null || userid === "Null") {
-            console.log("Empty userid, please log in again.")
             nav("/");
-        };
-    }, [userid]);
-    console.log("logged in as: " + userid);
+        } else {
+            sendFetchUserByIdRequest(userid).then(user => {
+                if (user && user.name) {
+                    setUsername(user.name);
+                }
+            });
+        }
+    }, [userid, nav]);
+
+    console.log("logged in as: " + userid + ", " + username);
+
+
+
     const { usernames, avatars } = fetchAllUserData();
     var friendsList = [];
 
@@ -65,7 +57,7 @@ function MainPage() {
             <div className="sidebar">
                 <div className="profile">
                     <div className="avatar"></div>
-                    <div className="username">Username</div>
+                    <div className="username">{username}</div>
                 </div>
                 <div className="chats">
                     {friendsList}

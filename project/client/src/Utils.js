@@ -43,3 +43,16 @@ export async function sendRegisterRequest(username, password, birthday) {
         })
     });
 };
+
+export async function sendFetchUserByIdRequest(userId) {
+    if (userId === "" || userId === null || userId === "Null") return null;
+    const res = await fetch("http://localhost:3001/api/users/" + userId, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data;
+}
