@@ -30,14 +30,22 @@ const getUserById = async (req, res) => {
 }
 
 const createUser = async (req, res) => {
-    try {
-        const user = await userService.createUser(req.body);
-        let userid = user.id;
-        res.status(201).json({ message: 'Login successful', userid });
+    const { name, password, date } = req.body;
+
+    const check = await userService.getUserByName(name);
+    if (check !== null) {
+        res.status(401).json({ error: 'User with this name already exists' })
     }
-    catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to create user' });
+    else {
+        try {
+            const user = await userService.createUser(req.body);
+            let userid = user.id;
+            res.status(201).json({ message: 'Login successful', userid });
+        }
+        catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Failed to create user' });
+        }
     }
 }
 

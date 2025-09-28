@@ -28,7 +28,11 @@ function RegisterPage() {
                 });
             } else if (res.status === 400) {
                 setError("Hiányzó vagy hibás adat!");
-            } else if (res.status === 500) {
+            }
+            else if (res.status === 401) {
+                setError("Ez a Felhasználónév már foglalt!");
+            }
+            else if (res.status === 500) {
                 setError("Szerverhiba! Próbáld újra.");
             } else {
                 const data = await res.json();
