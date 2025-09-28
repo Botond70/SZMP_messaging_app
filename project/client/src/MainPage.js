@@ -109,7 +109,9 @@ function MainPage() {
                 <div className="chat-messages">
                     {messages.map((msg, index) => (
                         <div key={index} className={`message ${msg.senderID + "" === userid ? 'my-message' : 'other-message'}`}>
-                            <p>{msg.content}</p>
+                            <p>
+                                {msg.senderID + "" === userid ? "Te" : selectedUser.name}: {msg.content}
+                            </p>
                             <span>{new Date(msg.sentTime).toLocaleTimeString()}</span>
                         </div>
                     ))}
