@@ -4,13 +4,13 @@ import './MainPage.css';
 import { getCookie, sendFetchUserByIdRequest, sendFetchAllUsers } from './Utils';
 
 
-function constructFriend(Username, Avatar, Iter) {
+function constructFriend(Username, Avatar, UserId, onClick) {
     return (
-        <div key={4 * Iter} className="chat-item">
-            <div key={4 * Iter + 1} className="chat-item-avatar">
-                <img key={4 * Iter + 2} className="chat-item-avatar-image" src={Avatar} alt={`img`} />
+        <div key={UserId} className="chat-item" onClick={() => onClick({ name: Username, id: UserId })}>
+            <div className="chat-item-avatar">
+                <img className="chat-item-avatar-image" src={Avatar} alt={`img`} />
             </div>
-            <div key={4 * Iter + 3} className="chat-item-username">{Username}</div>
+            <div className="chat-item-username">Elérhető: {Username}</div>
         </div>
     );
 }
@@ -19,6 +19,7 @@ function MainPage() {
     const nav = useNavigate();
     const [username, setUsername] = useState("");
     const [allusers, setAllUsers] = useState([]);
+    const [selectedUser, setSelectedUser] = useState(null);
     let userid = getCookie("user");
 
     useEffect(() => {
@@ -51,8 +52,8 @@ function MainPage() {
 
 
     const avatar = "https://cdn-icons-png.flaticon.com/256/983/983929.png";
-    const friendsList = chattableUsers.map((user, i) =>
-        constructFriend(user.name, avatar, i)
+    const friendsList = chattableUsers.map((user) =>
+        constructFriend(user.name, avatar, user.id, setSelectedUser)
     );
 
 
@@ -61,7 +62,7 @@ function MainPage() {
             <div className="sidebar">
                 <div className="profile">
                     <div className="avatar"></div>
-                    <div className="username">{username}</div>
+                    <div className="username">Üdvözöljük {username}!</div>
                 </div>
                 <div className="chats">
                     {friendsList}
@@ -73,7 +74,9 @@ function MainPage() {
                         <div className="chat-user-avatar">
 
                         </div>
-                        <div className="chat-user-name">Username</div>
+                        <div className="chat-user-name">
+                            {selectedUser ? `Chattelés vele: ${selectedUser.name}` : "Válassz egy felhasználót a bal oldali listából!"}
+                        </div>
                     </div>
                 </div>
 
@@ -81,8 +84,8 @@ function MainPage() {
 
                 </div>
                 <div className="chat-input">
-                    <input type="text" placeholder="Type your message here" className="chat-input-box" />
-                    <button className="send-button">Send</button>
+                    <input type="text" placeholder="Ide írj egy üzenetet..." className="chat-input-box" />
+                    <button className="send-button">Küldés</button>
                 </div>
             </div>
 
