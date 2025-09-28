@@ -34,7 +34,9 @@ function MainPage() {
     }, [userid, nav]);
 
     useEffect(() => {
-        console.log("logged in as: " + userid + ", " + username);
+        if (userid !== "" && userid !== null && username !== "" && username !== null) {
+            console.log("logged in as: " + userid + ", " + username);
+        }
     }, [userid, username]);
 
     useEffect(() => {
