@@ -18,3 +18,6 @@ Szoftverfejlesztés Módszertan Projekt
 - npm
 - Node
 - React (npm install react react-dom)
+
+## Futtatáshoz szükséges:
+- Docker -> project/messaging-api/docker-compose.yml
