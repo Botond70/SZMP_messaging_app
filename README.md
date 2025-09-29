@@ -6,18 +6,15 @@ Szoftverfejlesztés Módszertan Projekt
 
 ## Tech stack
 
-- Frontend: React + Material UI
+- Frontend: React
 - Backend: Node.js
 - Database: Postgre
-- Hosting: 
-    - Vercel for frontend
-    - Render for backend 
 
 ## Külső függőségek
-
 - npm
 - Node
 - React (npm install react react-dom)
+- Docker
 
 ## Futtatáshoz szükséges:
 - Docker -> project/messaging-api/docker-compose.yml
