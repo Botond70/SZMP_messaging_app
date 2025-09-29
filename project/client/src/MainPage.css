@@ -98,6 +98,7 @@
 
 .chat-item-avatar,
 .chat-item-avatar-image {
+    background-color: #777;
     width: min(5vw, 60px);
     height: min(5vw, 60px);
     border-radius: 50%;
@@ -147,6 +148,7 @@
     height: 60px;
     border-radius: 50%;
     border: thin solid #555;
+    background-color: #777;
     margin-right: 15px;
 
 }
